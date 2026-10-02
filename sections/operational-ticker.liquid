@@ -1,0 +1,147 @@
+{%- style -%}
+  .operational-ticker-{{ section.id }} {
+    background-color: {{ section.settings.bg_color }};
+    border-top: 1px solid {{ section.settings.border_color }};
+    border-bottom: 1px solid {{ section.settings.border_color }};
+    overflow: hidden;
+    position: relative;
+    padding: 0.85rem 0;
+    user-select: none;
+  }
+
+  .operational-ticker-track {
+    display: flex;
+    width: max-content;
+    animation: operational-marquee {{ section.settings.speed }}s linear infinite;
+  }
+
+  .operational-ticker-track:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes operational-marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .operational-ticker-group {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .operational-ticker-item {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: {{ section.settings.text_color }};
+    white-space: nowrap;
+    padding: 0 1.75rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  }
+
+  .operational-ticker-dot {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: {{ section.settings.accent_color }};
+    margin-right: 1.75rem;
+    opacity: 0.85;
+  }
+{%- endstyle -%}
+
+<section class="operational-ticker-{{ section.id }}" aria-label="Información Operativa">
+  <div class="operational-ticker-track">
+    <!-- Set 1 -->
+    <div class="operational-ticker-group">
+      {%- for block in section.blocks -%}
+        <span class="operational-ticker-item">
+          {{ block.settings.text }}
+        </span>
+        <span class="operational-ticker-dot" aria-hidden="true"></span>
+      {%- endfor -%}
+    </div>
+    <!-- Set 2 (for seamless loop) -->
+    <div class="operational-ticker-group" aria-hidden="true">
+      {%- for block in section.blocks -%}
+        <span class="operational-ticker-item">
+          {{ block.settings.text }}
+        </span>
+        <span class="operational-ticker-dot" aria-hidden="true"></span>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Ticker Operativo",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Color de Fondo",
+      "default": "#0e1014"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Color del Borde",
+      "default": "#232730"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Color del Texto",
+      "default": "#d1d5db"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Color del Separador",
+      "default": "#f59e0b"
+    },
+    {
+      "type": "range",
+      "id": "speed",
+      "min": 15,
+      "max": 60,
+      "step": 5,
+      "unit": "s",
+      "label": "Velocidad de Desplazamiento",
+      "default": 35
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Elemento",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Texto Informativo",
+          "default": "ALMACÉN CENTRAL: DALLAS, TX"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ticker Operativo",
+      "blocks": [
+        { "type": "item", "settings": { "text": "ALMACÉN CENTRAL: DALLAS, TX" } },
+        { "type": "item", "settings": { "text": "DESPACHO EN 24 HORAS HÁBILES" } },
+        { "type": "item", "settings": { "text": "PRODUCTOS 100% NUEVOS EN CAJA SELLADA" } },
+        { "type": "item", "settings": { "text": "GARANTÍA LOCAL DE 30 DÍAS" } },
+        { "type": "item", "settings": { "text": "INVENTARIO DIRECTO DE DISTRIBUIDOR" } },
+        { "type": "item", "settings": { "text": "ENVÍOS DIRECTOS A TODO TEXAS" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

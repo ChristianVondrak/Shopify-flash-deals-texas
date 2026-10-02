@@ -1,0 +1,591 @@
+{%- style -%}
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .flash-deals-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    background: {{ section.settings.bg_color }};
+    scroll-margin-top: 80px;
+  }
+
+  .flash-deals-container {
+    max-width: var(--page-width, 1200px);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .flash-deals-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 2.75rem;
+  }
+
+  .flash-deals-title-group {
+    max-width: 680px;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .flash-deals-heading {
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    font-weight: 800;
+    line-height: 1.15;
+    margin: 0 0 0.65rem;
+    color: #f3f4f6;
+    letter-spacing: -0.02em;
+  }
+
+  .flash-deals-subheading {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+    color: #9ca3af;
+  }
+
+  /* Precision Digital Chronometer */
+  .flash-countdown {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    background: #14171d;
+    padding: 0.65rem 1.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  @media screen and (max-width: 600px) {
+    .flash-countdown {
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 0.75rem 1rem;
+    }
+  }
+
+  .countdown-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #9ca3af;
+    display: flex;
+    align-items: center;
+  }
+
+  .countdown-digits-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .countdown-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #0f1115;
+    min-width: 44px;
+    padding: 0.35rem 0.55rem;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .countdown-number {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+    color: #f59e0b;
+  }
+
+  .countdown-unit {
+    font-size: 0.58rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #6b7280;
+    margin-top: 0.2rem;
+    letter-spacing: 0.08em;
+  }
+
+  .countdown-separator {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #4b5563;
+  }
+
+  /* Product Cards Grid (Centrado dinámico según cantidad de ofertas) */
+  .flash-products-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .flash-card {
+    flex: 1 1 260px;
+    max-width: 300px;
+    min-width: 250px;
+    position: relative;
+    background: #1c1f26;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  }
+
+  @media screen and (max-width: 600px) {
+    .flash-products-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+    }
+    .flash-card {
+      max-width: 100%;
+      min-width: unset;
+    }
+  }
+
+  .flash-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
+    border-color: rgba(245, 158, 11, 0.4);
+  }
+
+  .flash-card-media {
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+    background: #15181e;
+    overflow: hidden;
+  }
+
+  .flash-card-media img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .flash-card:hover .flash-card-media img {
+    transform: scale(1.04);
+  }
+
+  .flash-card-discount-tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #0f1115;
+    color: #f59e0b;
+    border: 1px solid rgba(245, 158, 11, 0.4);
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    z-index: 2;
+  }
+
+  .flash-card-content {
+    padding: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .flash-card-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.35;
+    margin: 0 0 0.5rem;
+    color: #f3f4f6;
+    text-decoration: none;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .flash-card-title:hover {
+    color: #f59e0b;
+  }
+
+  .flash-card-price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin-top: auto;
+    margin-bottom: 0.85rem;
+  }
+
+  .flash-card-sale-price {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #ea580c;
+  }
+
+  .flash-card-regular-price {
+    font-size: 0.85rem;
+    text-decoration: line-through;
+    color: #6b7280;
+  }
+
+  .flash-card-btn {
+    width: 100%;
+    padding: 0.65rem 1rem;
+    border-radius: 8px;
+    background: #ea580c;
+    color: #ffffff;
+    border: none;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    text-decoration: none;
+  }
+
+  .flash-card-btn:hover {
+    background: #c2410c;
+  }
+
+  .flash-deals-footer-btn {
+    margin-top: 2.5rem;
+    text-align: center;
+  }
+
+  .flash-view-all-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #f3f4f6;
+    text-decoration: none;
+    padding: 0.75rem 1.75rem;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    transition: all 0.2s ease;
+  }
+
+  .flash-view-all-link:hover {
+    background: #ea580c;
+    border-color: #ea580c;
+    color: #ffffff;
+  }
+{%- endstyle -%}
+
+<section id="flash-deals" class="flash-deals-{{ section.id }}" data-section-id="{{ section.id }}">
+  <div class="flash-deals-container">
+    <div class="flash-deals-header">
+      <div class="flash-deals-title-group">
+        <h2 class="flash-deals-heading">{{ section.settings.heading }}</h2>
+        {%- if section.settings.subheading != blank -%}
+          <p class="flash-deals-subheading">{{ section.settings.subheading }}</p>
+        {%- endif -%}
+      </div>
+
+      <!-- Live Countdown Chronometer -->
+      <div class="flash-countdown" id="flash-countdown-{{ section.id }}" data-hours="{{ section.settings.timer_duration_hours }}">
+        <div class="countdown-label">
+          {{ section.settings.timer_label }}
+        </div>
+        <div class="countdown-digits-wrapper">
+          <div class="countdown-box">
+            <span class="countdown-number" id="countdown-hours-{{ section.id }}">08</span>
+            <span class="countdown-unit">HRS</span>
+          </div>
+          <span class="countdown-separator">:</span>
+          <div class="countdown-box">
+            <span class="countdown-number" id="countdown-minutes-{{ section.id }}">45</span>
+            <span class="countdown-unit">MIN</span>
+          </div>
+          <span class="countdown-separator">:</span>
+          <div class="countdown-box">
+            <span class="countdown-number" id="countdown-seconds-{{ section.id }}">20</span>
+            <span class="countdown-unit">SEG</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Grid: Solo productos con descuento real -->
+    <div class="flash-products-grid">
+      {%- assign collection = collections[section.settings.collection] -%}
+      {%- assign real_deals_count = 0 -%}
+
+      {%- if collection != blank and collection.products.size > 0 -%}
+        {%- for product in collection.products -%}
+          {%- if product.compare_at_price > product.price -%}
+            {%- assign real_deals_count = real_deals_count | plus: 1 -%}
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endif -%}
+
+      {%- if real_deals_count > 0 -%}
+        {%- assign rendered = 0 -%}
+        {%- for product in collection.products -%}
+          {%- if product.compare_at_price > product.price -%}
+            {%- if rendered < section.settings.products_to_show -%}
+              {%- assign rendered = rendered | plus: 1 -%}
+              {%- assign savings = product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round -%}
+
+              <div class="flash-card">
+                <div class="flash-card-media">
+                  <div class="flash-card-discount-tag">-{{ savings }}%</div>
+
+                  {%- if product.featured_image != blank -%}
+                    <img src="{{ product.featured_image | image_url: width: 600 }}" alt="{{ product.title | escape }}" loading="lazy" width="600" height="600">
+                  {%- else -%}
+                    {{ 'product-1' | placeholder_svg_tag }}
+                  {%- endif -%}
+                </div>
+
+                <div class="flash-card-content">
+                  <a href="{{ product.url }}" class="flash-card-title">{{ product.title }}</a>
+                  
+                  <div class="flash-card-price-row">
+                    <span class="flash-card-sale-price">{{ product.price | money }}</span>
+                    <span class="flash-card-regular-price">{{ product.compare_at_price | money }}</span>
+                  </div>
+
+                  {%- if product.available -%}
+                    <form method="post" action="/cart/add">
+                      <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+                      <button type="submit" class="flash-card-btn">
+                        Comprar Oferta
+                      </button>
+                    </form>
+                  {%- else -%}
+                    <button type="button" class="flash-card-btn" disabled style="opacity: 0.5; cursor: not-allowed;">
+                      Agotado
+                    </button>
+                  {%- endif -%}
+                </div>
+              </div>
+            {%- endif -%}
+          {%- endif -%}
+        {%- endfor -%}
+      {%- else -%}
+        <div style="text-align: center; padding: 2.5rem; background: #1c1f26; border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); max-width: 520px; margin: 0 auto; color: #9ca3af;">
+          <p style="font-size: 1.1rem; color: #f3f4f6; font-weight: 700; margin: 0 0 0.5rem;">No hay productos con descuento activos</p>
+          <p style="font-size: 0.85rem; line-height: 1.5; margin: 0;">Para que un producto aparezca aquí, ingresa a tu panel de Shopify y añade un <strong>Precio de comparación</strong> (precio original) mayor a su precio de venta.</p>
+        </div>
+      {%- endif -%}
+    </div>
+
+    {%- if section.settings.show_view_all -%}
+      <div class="flash-deals-footer-btn">
+        <a href="{{ collection.url | default: '/collections/all' }}" class="flash-view-all-link">
+          Ver Todo el Catálogo de Ofertas
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+<script>
+  (function() {
+    function initFlashCountdown() {
+      const sectionId = "{{ section.id }}";
+      const hoursEl = document.getElementById("countdown-hours-" + sectionId);
+      const minutesEl = document.getElementById("countdown-minutes-" + sectionId);
+      const secondsEl = document.getElementById("countdown-seconds-" + sectionId);
+
+      if (!hoursEl || !minutesEl || !secondsEl) return;
+
+      // Persisted rolling countdown
+      const storageKey = 'flash_deals_timer_end_' + sectionId;
+      let targetTime = localStorage.getItem(storageKey);
+      const now = new Date().getTime();
+
+      // If no stored timer or already expired, set new 8-hour rolling timer
+      if (!targetTime || parseInt(targetTime) <= now) {
+        targetTime = now + (8 * 60 * 60 * 1000) + (45 * 60 * 1000);
+        localStorage.setItem(storageKey, targetTime);
+      }
+
+      function updateTimer() {
+        const current = new Date().getTime();
+        let diff = parseInt(targetTime) - current;
+
+        if (diff <= 0) {
+          // Reset for rolling continuous urgency
+          targetTime = new Date().getTime() + (8 * 60 * 60 * 1000);
+          localStorage.setItem(storageKey, targetTime);
+          diff = targetTime - current;
+        }
+
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        hoursEl.textContent = String(hours).padStart(2, '0');
+        minutesEl.textContent = String(minutes).padStart(2, '0');
+        secondsEl.textContent = String(seconds).padStart(2, '0');
+      }
+
+      updateTimer();
+      setInterval(updateTimer, 1000);
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initFlashCountdown);
+    } else {
+      initFlashCountdown();
+    }
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Ofertas Flash",
+  "settings": [
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Texto del Kicker / Badge",
+      "default": "LOTE LIMITADO · DISPONIBILIDAD INMEDIATA"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Título Principal",
+      "default": "Ofertas Flash de Liquidación"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subtítulo",
+      "default": "Descuentos directos en herramientas, iluminación y electricidad. ¡Stock limitado!"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Colección de Ofertas"
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "min": 2,
+      "max": 12,
+      "step": 1,
+      "label": "Cantidad de productos a mostrar",
+      "default": 4
+    },
+    {
+      "type": "text",
+      "id": "timer_label",
+      "label": "Etiqueta del Temporizador",
+      "default": "Termina en:"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_view_all",
+      "label": "Mostrar botón de ver todo el catálogo",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Colores y Estilo"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Fondo de la Sección",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Color del Título",
+      "default": "#111827"
+    },
+    {
+      "type": "color",
+      "id": "subheading_color",
+      "label": "Color del Subtítulo",
+      "default": "#4b5563"
+    },
+    {
+      "type": "color",
+      "id": "badge_bg",
+      "label": "Fondo del Badge",
+      "default": "#fef2f2"
+    },
+    {
+      "type": "color",
+      "id": "badge_color",
+      "label": "Color del Texto del Badge",
+      "default": "#e11d48"
+    },
+    {
+      "type": "color",
+      "id": "timer_bg",
+      "label": "Fondo Contenedor Temporizador",
+      "default": "#f9fafb"
+    },
+    {
+      "type": "color",
+      "id": "timer_box_bg",
+      "label": "Fondo Cajas de Dígitos",
+      "default": "#111827"
+    },
+    {
+      "type": "color",
+      "id": "timer_digits_color",
+      "label": "Color Dígitos",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "timer_label_color",
+      "label": "Color Etiqueta Temporizador",
+      "default": "#e11d48"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Espaciado Superior",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Espaciado Inferior",
+      "default": 50
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ofertas Flash & Liquidación"
+    }
+  ]
+}
+{% endschema %}

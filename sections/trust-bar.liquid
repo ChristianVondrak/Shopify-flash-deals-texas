@@ -1,0 +1,277 @@
+{%- style -%}
+  .trust-bar-section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    background-color: {{ section.settings.bg_color }};
+    border-top: 1px solid {{ section.settings.border_color }};
+    border-bottom: 1px solid {{ section.settings.border_color }};
+  }
+
+  .trust-bar-container {
+    max-width: var(--page-width, 1200px);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .trust-bar-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  @media screen and (max-width: 989px) {
+    .trust-bar-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .trust-bar-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+  }
+
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .trust-item:hover {
+    transform: translateY(-2px);
+  }
+
+  .trust-icon-wrapper {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: {{ section.settings.icon_bg }};
+    color: {{ section.settings.icon_color }};
+  }
+
+  .trust-icon-wrapper svg {
+    width: 24px;
+    height: 24px;
+    stroke-width: 2;
+  }
+
+  .trust-content {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .trust-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 0;
+    color: {{ section.settings.text_color }};
+  }
+
+  .trust-subtitle {
+    font-size: 0.8rem;
+    line-height: 1.35;
+    margin-top: 0.2rem;
+    color: {{ section.settings.subtext_color }};
+  }
+{%- endstyle -%}
+
+<section class="trust-bar-section-{{ section.id }}">
+  <div class="trust-bar-container">
+    <div class="trust-bar-grid">
+      {%- for block in section.blocks -%}
+        <div class="trust-item" {{ block.shopify_attributes }}>
+          <div class="trust-icon-wrapper">
+            {%- case block.settings.icon -%}
+              {%- when 'shipping' -%}
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="1" y="3" width="15" height="13"></rect>
+                  <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                  <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                  <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                </svg>
+              {%- when 'shield' -%}
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  <polyline points="9 12 11 14 15 10"></polyline>
+                </svg>
+              {%- when 'payment' -%}
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                  <line x1="1" y1="10" x2="23" y2="10"></line>
+                </svg>
+              {%- when 'return' -%}
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="1 4 1 10 7 10"></polyline>
+                  <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+                </svg>
+              {%- when 'lightning' -%}
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+              {%- else -%}
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="8" x2="12" y2="12"></line>
+                  <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+            {%- endcase -%}
+          </div>
+          <div class="trust-content">
+            <h3 class="trust-title">{{ block.settings.title }}</h3>
+            {%- if block.settings.subtitle != blank -%}
+              <p class="trust-subtitle">{{ block.settings.subtitle }}</p>
+            {%- endif -%}
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Barra de Confianza",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Color de Fondo",
+      "default": "#f8f9fa"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Color del Borde",
+      "default": "#e5e7eb"
+    },
+    {
+      "type": "color",
+      "id": "icon_bg",
+      "label": "Fondo del Icono",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Color del Icono",
+      "default": "#121212"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Color del Título",
+      "default": "#111827"
+    },
+    {
+      "type": "color",
+      "id": "subtext_color",
+      "label": "Color del Subtítulo",
+      "default": "#6b7280"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "label": "Espaciado Superior",
+      "default": 25
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "label": "Espaciado Inferior",
+      "default": 25
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Beneficio",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icono",
+          "options": [
+            { "value": "shipping", "label": "Envío Rápido" },
+            { "value": "shield", "label": "Garantía de Calidad" },
+            { "value": "payment", "label": "Pago Seguro" },
+            { "value": "return", "label": "Devolución Fácil" },
+            { "value": "lightning", "label": "Ofertas Flash" }
+          ],
+          "default": "shipping"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Título",
+          "default": "Envío Rápido y Seguro"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtítulo",
+          "default": "Entregas directas en todo Texas"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Barra de Confianza",
+      "blocks": [
+        {
+          "type": "item",
+          "settings": {
+            "icon": "shipping",
+            "title": "Envíos Rápidos",
+            "subtitle": "Directo a tu puerta en Texas"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "icon": "lightning",
+            "title": "Ofertas Flash",
+            "subtitle": "Precios de liquidación diarios"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "icon": "shield",
+            "title": "Garantía de Calidad",
+            "subtitle": "Productos 100% testeados"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "icon": "payment",
+            "title": "Compra Segura",
+            "subtitle": "Transacciones encriptadas"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

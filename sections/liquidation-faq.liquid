@@ -1,0 +1,246 @@
+{%- style -%}
+  .liquidation-faq-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    background-color: {{ section.settings.bg_color }};
+  }
+
+  .liquidation-faq-container {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .liquidation-faq-header {
+    text-align: center;
+    margin-bottom: 2.75rem;
+  }
+
+  .liquidation-faq-kicker {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: #f59e0b;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    margin-bottom: 0.5rem;
+  }
+
+  .liquidation-faq-heading {
+    font-size: clamp(1.6rem, 3vw, 2.25rem);
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0 0 0.65rem;
+    color: {{ section.settings.heading_color }};
+    letter-spacing: -0.02em;
+  }
+
+  .liquidation-faq-subheading {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+    color: {{ section.settings.subheading_color }};
+  }
+
+  .liquidation-faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .liquidation-faq-item {
+    background-color: #16181d;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+  }
+
+  .liquidation-faq-item[open] {
+    border-color: rgba(245, 158, 11, 0.4);
+    background-color: #191c22;
+  }
+
+  .liquidation-faq-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 1.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #f3f4f6;
+    user-select: none;
+    list-style: none;
+  }
+
+  .liquidation-faq-summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .liquidation-faq-icon {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    color: #f59e0b;
+    transition: transform 0.25s ease;
+    margin-left: 1rem;
+  }
+
+  .liquidation-faq-item[open] .liquidation-faq-icon {
+    transform: rotate(180deg);
+  }
+
+  .liquidation-faq-answer {
+    padding: 0 1.5rem 1.35rem;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: #9ca3af;
+  }
+
+  .liquidation-faq-answer p {
+    margin: 0;
+  }
+{%- endstyle -%}
+
+<section class="liquidation-faq-{{ section.id }}" aria-label="Preguntas Frecuentes">
+  <div class="liquidation-faq-container">
+    <div class="liquidation-faq-header">
+      <span class="liquidation-faq-kicker">RESOLUCIÓN DE DUDAS</span>
+      <h2 class="liquidation-faq-heading">{{ section.settings.heading }}</h2>
+      {%- if section.settings.subheading != blank -%}
+        <p class="liquidation-faq-subheading">{{ section.settings.subheading }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="liquidation-faq-list">
+      {%- for block in section.blocks -%}
+        <details class="liquidation-faq-item" {{ block.shopify_attributes }}>
+          <summary class="liquidation-faq-summary">
+            <span>{{ block.settings.question }}</span>
+            <svg class="liquidation-faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </summary>
+          <div class="liquidation-faq-answer">
+            <p>{{ block.settings.answer }}</p>
+          </div>
+        </details>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "FAQ de Liquidaciones",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Título",
+      "default": "Preguntas Frecuentes sobre Liquidaciones"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subtítulo",
+      "default": "Todo lo que necesitas saber sobre procedencia, envíos en Texas y garantías."
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Color de Fondo",
+      "default": "#121418"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Color del Título",
+      "default": "#f3f4f6"
+    },
+    {
+      "type": "color",
+      "id": "subheading_color",
+      "label": "Color del Subtítulo",
+      "default": "#9ca3af"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Espaciado Superior",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Espaciado Inferior",
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq_item",
+      "name": "Pregunta / Respuesta",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Pregunta",
+          "default": "¿Los productos son nuevos o reacondicionados?"
+        },
+        {
+          "type": "textarea",
+          "id": "answer",
+          "label": "Respuesta",
+          "default": "Todos nuestros productos son 100% nuevos, en su empaque original de fábrica con sellos intactos. Provienen de sobrestock mayorista y cancelaciones de distribuidores, nunca de segunda mano."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ de Liquidaciones",
+      "blocks": [
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "¿Los artículos son 100% nuevos o reacondicionados?",
+            "answer": "Todos nuestros artículos son 100% nuevos, sellados en su empaque original de fábrica. Provienen de excedentes de obra y sobrestock de distribuidores mayoristas autorizados en Texas, nunca de productos usados o devueltos."
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "¿Por qué los precios son tan bajos respecto al retail tradicional?",
+            "answer": "Compramos lotes cerrados por volumen a fabricantes y distribuidores que necesitan liberar espacio en almacén. Al despachar directamente desde nuestro centro en Dallas sin sobrecostos de intermediarios ni locales comerciales lujosos, trasladamos el ahorro neto a nuestros clientes."
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "¿Cuánto tiempo tarda la entrega en Texas?",
+            "answer": "Los pedidos se procesan y despachan en un plazo máximo de 24 horas hábiles desde Dallas, TX. El tiempo promedio de tránsito dentro de Texas es de 1 a 3 días hábiles vía paquetería express."
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "¿Qué garantía tienen las herramientas y componentes eléctricos?",
+            "answer": "Todos los productos cuentan con 30 días de garantía directa con nosotros contra cualquier defecto técnico o de fabricación, además de la cobertura oficial del fabricante correspondiente."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
