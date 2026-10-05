@@ -158,16 +158,16 @@
     width: 100%;
   }
 
-  /* ── TARJETA DEL PRODUCTO (ESTILO MOCKUP: BLANCA, CABECERA ROJA CON % Y PRECIO TACHADO) ── */
+  /* ── TARJETA DEL PRODUCTO HERO (ESTILO MOCKUP: CABECERA ROJA GRANDE DESTACADA Y BLANCO UNIFICADO) ── */
   .fdtx-hero-card {
     background: #ffffff;
-    border-radius: 20px;
+    border-radius: 24px;
     box-shadow:
-      0 20px 48px -6px rgba(0, 0, 0, 0.45),
+      0 24px 52px -10px rgba(0, 0, 0, 0.48),
       0 0 0 1px rgba(255, 255, 255, 0.15);
     overflow: hidden;
     width: 100%;
-    max-width: 290px;
+    max-width: 305px;
     text-decoration: none;
     display: block;
     transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
@@ -177,78 +177,88 @@
   .fdtx-hero-card:hover {
     transform: translateY(-8px) scale(1.02);
     box-shadow:
-      0 32px 64px -10px rgba(0, 0, 0, 0.58),
+      0 34px 68px -12px rgba(0, 0, 0, 0.6),
       0 0 0 1px rgba(255, 255, 255, 0.25);
   }
 
-  /* Cabecera roja superior con % y DESCUENTO */
+  /* Cabecera roja superior grande y llamativa idéntica al mockup */
   .fdtx-hero-card-header {
     background: linear-gradient(180deg, #ef4444 0%, #dc2626 100%);
     color: #ffffff;
     text-align: center;
-    padding: 0.85rem 1rem 0.75rem;
+    padding: 1.6rem 1.25rem 1.45rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1px;
-    box-shadow: inset 0 -2px 6px rgba(0, 0, 0, 0.12);
+    gap: 3px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0 8px 24px -4px rgba(220, 38, 38, 0.45);
+    position: relative;
+    z-index: 2;
   }
 
   .fdtx-hero-card-discount {
     font-family: 'Outfit', ui-sans-serif, system-ui, sans-serif;
-    font-size: 2.25rem;
+    font-size: clamp(2.8rem, 4vw, 3.4rem);
     font-weight: 900;
-    line-height: 1;
-    letter-spacing: -0.03em;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
     color: #ffffff;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
   }
 
   .fdtx-hero-card-discount-label {
     font-family: 'Outfit', ui-sans-serif, system-ui, sans-serif;
-    font-size: 0.72rem;
-    font-weight: 800;
-    letter-spacing: 0.12em;
+    font-size: 0.82rem;
+    font-weight: 900;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.95);
+    color: rgba(255, 255, 255, 0.98);
     line-height: 1.1;
-    margin-top: 2px;
+    margin-top: 4px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   }
 
   /* Cuerpo blanco de la tarjeta */
   .fdtx-hero-card-body {
     background: #ffffff;
-    padding: 1.35rem 1.25rem 1.45rem;
+    padding: 0.75rem 1.25rem 1.6rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    position: relative;
+    z-index: 1;
   }
 
-  /* Envoltorio de imagen limpia */
+  /* Envoltorio de imagen limpia: sin bordes, sin sombras extra */
   .fdtx-hero-card-image-wrap {
     width: 100%;
-    height: 175px;
+    height: 180px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 0.85rem;
+    margin: 0.5rem 0 0.75rem;
+    background: #ffffff;
     overflow: hidden;
   }
 
+  /* Imagen con mix-blend-mode: multiply para que el blanco de la foto sea 100% idéntico al de la tarjeta */
   .fdtx-hero-card-image-wrap img {
-    max-height: 165px;
+    max-height: 170px;
     max-width: 100%;
     width: auto;
     height: auto;
     object-fit: contain;
-    filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.18));
+    background: transparent;
+    mix-blend-mode: multiply;
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .fdtx-hero-card:hover .fdtx-hero-card-image-wrap img {
-    transform: scale(1.07) translateY(-3px);
+    transform: scale(1.06) translateY(-3px);
   }
 
   .fdtx-hero-card-placeholder {
@@ -265,12 +275,12 @@
     color: #cbd5e1;
   }
 
-  /* Título del producto */
+  /* Título opcional */
   .fdtx-hero-card-title {
     font-family: 'Outfit', ui-sans-serif, system-ui, sans-serif;
     font-size: 0.92rem;
     font-weight: 700;
-    color: #1e293b;
+    color: #334155;
     line-height: 1.3;
     margin: 0 0 0.5rem;
     max-width: 100%;
@@ -291,7 +301,7 @@
 
   .fdtx-hero-card-compare {
     font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
-    font-size: 1.05rem;
+    font-size: 1.15rem;
     font-weight: 600;
     color: #94a3b8;
     text-decoration: line-through;
@@ -300,7 +310,7 @@
 
   .fdtx-hero-card-price {
     font-family: 'Outfit', ui-sans-serif, system-ui, sans-serif;
-    font-size: 2.2rem;
+    font-size: 2.35rem;
     font-weight: 900;
     color: #0f172a;
     letter-spacing: -0.03em;
@@ -322,7 +332,7 @@
     .fdtx-hero-ctas { justify-content: center; }
     .fdtx-hero-trust { justify-content: center; }
     .fdtx-hero-visual { order: -1; }
-    .fdtx-hero-card { max-width: 275px; margin: 0 auto; }
+    .fdtx-hero-card { max-width: 290px; margin: 0 auto; }
   }
 
   @media screen and (max-width: 600px) {
@@ -336,9 +346,10 @@
     .fdtx-hero-ctas { flex-direction: column; gap: 0.5rem; }
     .fdtx-hero-trust { gap: 0.65rem; }
     .fdtx-trust-item { font-size: 0.7rem; }
-    .fdtx-hero-card { max-width: 250px; }
-    .fdtx-hero-card-discount { font-size: 1.9rem; }
-    .fdtx-hero-card-price { font-size: 1.85rem; }
+    .fdtx-hero-card { max-width: 260px; }
+    .fdtx-hero-card-header { padding: 1.25rem 1rem; }
+    .fdtx-hero-card-discount { font-size: 2.4rem; }
+    .fdtx-hero-card-price { font-size: 2rem; }
   }
 {%- endstyle -%}
 
@@ -434,7 +445,7 @@
               <img
                 src="{{ card_thumb | image_url: width: 600 }}"
                 srcset="{{ card_thumb | image_url: width: 300 }} 300w, {{ card_thumb | image_url: width: 600 }} 600w"
-                sizes="290px"
+                sizes="300px"
                 alt="{{ hero_title | escape }}"
                 width="600"
                 height="450"
@@ -448,7 +459,7 @@
             {%- endif -%}
           </div>
 
-          {%- if hero_title != blank -%}
+          {%- if section.settings.show_card_title and hero_title != blank -%}
             <p class="fdtx-hero-card-title">{{ hero_title }}</p>
           {%- endif -%}
 
@@ -482,6 +493,7 @@
     { "type": "product", "id": "featured_product", "label": "Seleccionar Producto", "info": "La foto, precios, descuento y enlace se conectan automaticamente." },
     { "type": "image_picker", "id": "custom_image", "label": "Imagen personalizada del Hero", "info": "Opcional: Sube una foto para reemplazar la imagen del producto en el hero." },
     { "type": "header", "content": "Tarjeta de Oferta" },
+    { "type": "checkbox", "id": "show_card_title", "label": "Mostrar título del producto en la tarjeta", "default": false },
     { "type": "text", "id": "card_label", "label": "Etiqueta superior", "default": "Oferta del Dia" },
     { "type": "paragraph", "content": "Campos de respaldo si no hay producto seleccionado:" },
     { "type": "text", "id": "card_discount", "label": "Descuento manual", "default": "-42%" },
