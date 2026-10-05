@@ -158,183 +158,153 @@
     width: 100%;
   }
 
-  .fdtx-product-card {
-    background: linear-gradient(145deg, #1a2235 0%, #0f172a 100%);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 24px;
+  /* ── TARJETA DEL PRODUCTO (ESTILO MOCKUP: BLANCA, CABECERA ROJA CON % Y PRECIO TACHADO) ── */
+  .fdtx-hero-card {
+    background: #ffffff;
+    border-radius: 20px;
     box-shadow:
-      0 0 0 1px rgba(255, 255, 255, 0.06),
-      0 30px 60px -10px rgba(0, 0, 0, 0.6),
-      0 0 80px rgba(245, 158, 11, 0.05);
+      0 20px 48px -6px rgba(0, 0, 0, 0.45),
+      0 0 0 1px rgba(255, 255, 255, 0.15);
     overflow: hidden;
     width: 100%;
-    max-width: 380px;
+    max-width: 290px;
     text-decoration: none;
     display: block;
     transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     position: relative;
   }
 
-  .fdtx-product-card:hover {
-    transform: translateY(-6px) scale(1.01);
+  .fdtx-hero-card:hover {
+    transform: translateY(-8px) scale(1.02);
     box-shadow:
-      0 0 0 1px rgba(255, 255, 255, 0.1),
-      0 40px 70px -10px rgba(0, 0, 0, 0.7),
-      0 0 100px rgba(245, 158, 11, 0.08);
+      0 32px 64px -10px rgba(0, 0, 0, 0.58),
+      0 0 0 1px rgba(255, 255, 255, 0.25);
   }
 
-  .fdtx-product-card-badge {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: #dc2626;
-    color: #fff;
+  /* Cabecera roja superior con % y DESCUENTO */
+  .fdtx-hero-card-header {
+    background: linear-gradient(180deg, #ef4444 0%, #dc2626 100%);
+    color: #ffffff;
+    text-align: center;
+    padding: 0.85rem 1rem 0.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1px;
+    box-shadow: inset 0 -2px 6px rgba(0, 0, 0, 0.12);
+  }
+
+  .fdtx-hero-card-discount {
     font-family: 'Outfit', ui-sans-serif, system-ui, sans-serif;
-    font-size: 1.1rem;
+    font-size: 2.25rem;
     font-weight: 900;
-    letter-spacing: -0.03em;
-    padding: 0.4rem 0.7rem;
-    border-radius: 10px;
     line-height: 1;
-    z-index: 2;
-    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.4);
+    letter-spacing: -0.03em;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
 
-  .fdtx-product-card-image-wrap {
-    position: relative;
+  .fdtx-hero-card-discount-label {
+    font-family: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.1;
+    margin-top: 2px;
+  }
+
+  /* Cuerpo blanco de la tarjeta */
+  .fdtx-hero-card-body {
+    background: #ffffff;
+    padding: 1.35rem 1.25rem 1.45rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Envoltorio de imagen limpia */
+  .fdtx-hero-card-image-wrap {
     width: 100%;
-    aspect-ratio: 4 / 3;
-    background: radial-gradient(ellipse at center, #1e2d45 0%, #0d1526 100%);
+    height: 175px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1.75rem 2rem;
+    margin-bottom: 0.85rem;
     overflow: hidden;
   }
 
-  .fdtx-product-card-image-wrap::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse 60% 50% at 50% 60%, rgba(245, 158, 11, 0.1) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  .fdtx-product-card-image-wrap img {
-    position: relative;
-    z-index: 1;
-    max-height: 195px;
+  .fdtx-hero-card-image-wrap img {
+    max-height: 165px;
     max-width: 100%;
     width: auto;
     height: auto;
     object-fit: contain;
-    filter: drop-shadow(0 16px 28px rgba(0, 0, 0, 0.55));
-    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.18));
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  .fdtx-product-card:hover .fdtx-product-card-image-wrap img {
-    transform: scale(1.06) translateY(-4px);
+  .fdtx-hero-card:hover .fdtx-hero-card-image-wrap img {
+    transform: scale(1.07) translateY(-3px);
   }
 
-  .fdtx-product-card-image-placeholder {
+  .fdtx-hero-card-placeholder {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    height: 100%;
   }
 
-  .fdtx-product-card-image-placeholder svg {
-    width: 56px;
-    height: 56px;
-    color: rgba(255, 255, 255, 0.2);
+  .fdtx-hero-card-placeholder svg {
+    width: 52px;
+    height: 52px;
+    color: #cbd5e1;
   }
 
-  .fdtx-product-card-info {
-    padding: 1.25rem 1.5rem 1.5rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.07);
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .fdtx-product-card-label {
-    font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
-    font-size: 0.65rem;
-    font-weight: 800;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: #f59e0b;
-  }
-
-  .fdtx-product-card-title {
-    font-family: 'Outfit', ui-sans-serif, system-ui, sans-serif;
-    font-size: 1.05rem;
-    font-weight: 700;
-    color: #f1f5f9;
-    line-height: 1.25;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    margin: 0;
-  }
-
-  .fdtx-product-card-prices {
-    display: flex;
-    align-items: baseline;
-    gap: 0.65rem;
-    margin-top: 0.1rem;
-  }
-
-  .fdtx-product-card-price {
-    font-family: 'Outfit', ui-sans-serif, system-ui, sans-serif;
-    font-size: 1.85rem;
-    font-weight: 900;
-    color: #ffffff;
-    letter-spacing: -0.03em;
-    line-height: 1;
-  }
-
-  .fdtx-product-card-compare {
-    font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
-    font-size: 0.95rem;
-    font-weight: 500;
-    text-decoration: line-through;
-    color: #64748b;
-  }
-
-  .fdtx-product-card-savings {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.3rem;
-    background: rgba(34, 197, 94, 0.12);
-    border: 1px solid rgba(34, 197, 94, 0.25);
-    color: #4ade80;
-    font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
-    font-size: 0.72rem;
-    font-weight: 700;
-    padding: 0.25rem 0.6rem;
-    border-radius: 6px;
-    width: fit-content;
-  }
-
-  .fdtx-product-card-cta {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.4rem;
-    background: #dc2626;
-    color: #ffffff;
+  /* Título del producto */
+  .fdtx-hero-card-title {
     font-family: 'Outfit', ui-sans-serif, system-ui, sans-serif;
     font-size: 0.92rem;
     font-weight: 700;
-    padding: 0.72rem 1rem;
-    border-radius: 10px;
-    margin-top: 0.35rem;
-    transition: background 0.2s ease;
+    color: #1e293b;
+    line-height: 1.3;
+    margin: 0 0 0.5rem;
+    max-width: 100%;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
   }
 
-  .fdtx-product-card:hover .fdtx-product-card-cta {
-    background: #b91c1c;
+  /* Precios alineados verticalmente como en el mockup */
+  .fdtx-hero-card-prices {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.15rem;
+    width: 100%;
+  }
+
+  .fdtx-hero-card-compare {
+    font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #94a3b8;
+    text-decoration: line-through;
+    line-height: 1.2;
+  }
+
+  .fdtx-hero-card-price {
+    font-family: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: #0f172a;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
   }
 
   @media screen and (max-width: 989px) {
@@ -352,7 +322,7 @@
     .fdtx-hero-ctas { justify-content: center; }
     .fdtx-hero-trust { justify-content: center; }
     .fdtx-hero-visual { order: -1; }
-    .fdtx-product-card { max-width: 340px; }
+    .fdtx-hero-card { max-width: 275px; margin: 0 auto; }
   }
 
   @media screen and (max-width: 600px) {
@@ -366,8 +336,9 @@
     .fdtx-hero-ctas { flex-direction: column; gap: 0.5rem; }
     .fdtx-hero-trust { gap: 0.65rem; }
     .fdtx-trust-item { font-size: 0.7rem; }
-    .fdtx-product-card { max-width: 300px; }
-    .fdtx-product-card-price { font-size: 1.55rem; }
+    .fdtx-hero-card { max-width: 250px; }
+    .fdtx-hero-card-discount { font-size: 1.9rem; }
+    .fdtx-hero-card-price { font-size: 1.85rem; }
   }
 {%- endstyle -%}
 
@@ -435,11 +406,9 @@
       {%- if feat_product.compare_at_price > feat_product.price -%}
         {%- assign hero_compare = feat_product.compare_at_price | money -%}
         {%- assign hero_discount = feat_product.compare_at_price | minus: feat_product.price | times: 100.0 | divided_by: feat_product.compare_at_price | round | prepend: '-' | append: '%' -%}
-        {%- assign hero_savings = feat_product.compare_at_price | minus: feat_product.price | money -%}
       {%- else -%}
         {%- assign hero_compare = section.settings.card_compare | default: '$299.00' -%}
         {%- assign hero_discount = section.settings.card_discount | default: '-42%' -%}
-        {%- assign hero_savings = blank -%}
       {%- endif -%}
       {%- assign card_thumb = section.settings.custom_image | default: feat_product.featured_image -%}
     {%- else -%}
@@ -448,52 +417,44 @@
       {%- assign hero_price = section.settings.card_price | default: '$134.50' -%}
       {%- assign hero_compare = section.settings.card_compare | default: '$299.00' -%}
       {%- assign hero_discount = section.settings.card_discount | default: '-42%' -%}
-      {%- assign hero_savings = blank -%}
       {%- assign card_thumb = section.settings.custom_image -%}
     {%- endif -%}
 
     <div class="fdtx-hero-visual">
-      <a href="{{ hero_url }}" class="fdtx-product-card" title="{{ hero_title | default: 'Ver Oferta' | escape }}">
+      <a href="{{ hero_url }}" class="fdtx-hero-card" title="{{ hero_title | default: 'Ver Oferta' | escape }}">
 
-        <div class="fdtx-product-card-badge">{{ hero_discount }}</div>
-
-        <div class="fdtx-product-card-image-wrap">
-          {%- if card_thumb != blank -%}
-            <img
-              src="{{ card_thumb | image_url: width: 600 }}"
-              srcset="{{ card_thumb | image_url: width: 300 }} 300w, {{ card_thumb | image_url: width: 600 }} 600w"
-              sizes="380px"
-              alt="{{ hero_title | escape }}"
-              width="600"
-              height="450"
-              loading="eager"
-              fetchpriority="high"
-            >
-          {%- else -%}
-            <div class="fdtx-product-card-image-placeholder">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-            </div>
-          {%- endif -%}
+        <div class="fdtx-hero-card-header">
+          <span class="fdtx-hero-card-discount">{{ hero_discount }}</span>
+          <span class="fdtx-hero-card-discount-label">DESCUENTO</span>
         </div>
 
-        <div class="fdtx-product-card-info">
-          <span class="fdtx-product-card-label">{{ section.settings.card_label | default: 'Oferta del Dia' }}</span>
-          {%- if hero_title != blank -%}
-            <p class="fdtx-product-card-title">{{ hero_title }}</p>
-          {%- endif -%}
-          <div class="fdtx-product-card-prices">
-            <span class="fdtx-product-card-price">{{ hero_price }}</span>
-            <span class="fdtx-product-card-compare">{{ hero_compare }}</span>
+        <div class="fdtx-hero-card-body">
+          <div class="fdtx-hero-card-image-wrap">
+            {%- if card_thumb != blank -%}
+              <img
+                src="{{ card_thumb | image_url: width: 600 }}"
+                srcset="{{ card_thumb | image_url: width: 300 }} 300w, {{ card_thumb | image_url: width: 600 }} 600w"
+                sizes="290px"
+                alt="{{ hero_title | escape }}"
+                width="600"
+                height="450"
+                loading="eager"
+                fetchpriority="high"
+              >
+            {%- else -%}
+              <div class="fdtx-hero-card-placeholder">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              </div>
+            {%- endif -%}
           </div>
-          {%- if hero_savings != blank -%}
-            <span class="fdtx-product-card-savings">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-              Ahorras {{ hero_savings }}
-            </span>
+
+          {%- if hero_title != blank -%}
+            <p class="fdtx-hero-card-title">{{ hero_title }}</p>
           {%- endif -%}
-          <div class="fdtx-product-card-cta">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-            Ver Oferta
+
+          <div class="fdtx-hero-card-prices">
+            <span class="fdtx-hero-card-compare">{{ hero_compare }}</span>
+            <span class="fdtx-hero-card-price">{{ hero_price }}</span>
           </div>
         </div>
 
