@@ -17,20 +17,6 @@
     margin-bottom: 2.5rem;
   }
 
-  .hvd-category-tag {
-    display: inline-block;
-    background: #fef3c7;
-    color: #b45309;
-    font-family: 'Outfit', ui-sans-serif, system-ui, sans-serif;
-    font-size: 0.85rem;
-    font-weight: 900;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    padding: 0.4rem 1.15rem;
-    border-radius: 9999px;
-    margin-bottom: 0.85rem;
-    box-shadow: 0 2px 8px rgba(217, 119, 6, 0.15);
-  }
 
   .hvd-heading {
     font-family: 'Outfit', ui-sans-serif, system-ui, sans-serif;
@@ -274,7 +260,6 @@
 <section id="alto-valor" class="high-value-{{ section.id }}" aria-label="Lotes de Alto Valor">
   <div class="hvd-container">
     <div class="hvd-header">
-      <div class="hvd-category-tag">LOTES DE ALTO VALOR</div>
       <h2 class="hvd-heading">{{ section.settings.heading }}</h2>
       {%- if section.settings.subheading != blank -%}
         <p class="hvd-subheading">{{ section.settings.subheading }}</p>

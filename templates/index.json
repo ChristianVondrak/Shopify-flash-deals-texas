@@ -15,9 +15,9 @@
         "card_price": "$134.50",
         "card_compare": "$299.00",
         "hero_image": "shopify:\/\/shop_images\/image_e39a4c31-7c96-43b7-a0c4-b0f7c02d34ff.jpg",
-        "bg_color": "#0f172a",
-        "heading_color": "#f1f5f9",
-        "subtext_color": "#94a3b8",
+        "bg_color": "#ffffff",
+        "heading_color": "#0f172a",
+        "subtext_color": "#475569",
         "overlay_opacity": 20,
         "padding_top": 40,
         "padding_bottom": 40
@@ -66,14 +66,14 @@
         "trust-4"
       ],
       "settings": {
-        "bg_color": "#16181d",
-        "border_color": "#232730",
-        "icon_bg": "#222731",
-        "icon_color": "#f59e0b",
-        "text_color": "#f4f3f0",
-        "subtext_color": "#9ca3af",
-        "padding_top": 10,
-        "padding_bottom": 10
+        "bg_color": "#ffffff",
+        "border_color": "#e2e8f0",
+        "icon_bg": "#fef3c7",
+        "icon_color": "#d97706",
+        "text_color": "#0f172a",
+        "subtext_color": "#64748b",
+        "padding_top": 14,
+        "padding_bottom": 14
       }
     },
     "operational_ticker": {
@@ -125,10 +125,10 @@
         "op-6"
       ],
       "settings": {
-        "bg_color": "#0f172a",
-        "border_color": "#1e293b",
-        "text_color": "#e2e8f0",
-        "accent_color": "#f59e0b",
+        "bg_color": "#f8fafc",
+        "border_color": "#e2e8f0",
+        "text_color": "#0f172a",
+        "accent_color": "#d97706",
         "speed": 35
       }
     },
@@ -136,7 +136,7 @@
       "type": "high-value-deals",
       "settings": {
         "heading": "OFERTAS DE ALTO VALOR & LOTES EXCLUSIVOS",
-        "subheading": "Equipos de alto rendimiento y lotes seleccionados con precio mayorista garantizado (≥ $60).",
+        "subheading": "",
         "collection": "frontpage",
         "filter_min_price": true,
         "show_demo_placeholders": true,
@@ -194,18 +194,18 @@
       "settings": {
         "heading": "Explora por Especialidad",
         "subheading": "Suministros y componentes seleccionados para tu hogar, taller o proyecto",
-        "bg_color": "#ffffff",
+        "bg_color": "#f8fafc",
         "heading_color": "#0f172a",
         "subheading_color": "#475569",
-        "padding_top": 60,
-        "padding_bottom": 60
+        "padding_top": 30,
+        "padding_bottom": 30
       }
     },
     "flash_deals": {
       "type": "flash-deals",
       "settings": {
         "heading": "OFERTAS IMPERDIBLES - POR TIEMPO LIMITADO",
-        "subheading": "Descuentos agresivos en artículos de alta rotación por menos de $60. Stock limitado por lote.",
+        "subheading": "",
         "collection": "ofertas-flash",
         "filter_max_price": true,
         "products_to_show": 4,
@@ -252,9 +252,9 @@
       "settings": {
         "heading": "¿Por qué nuestros precios son de liquidación real?",
         "subheading": "Adquirimos lotes de inventario y sobrestock mayorista en Texas para trasladar el descuento directo a tu proyecto.",
-        "bg_color": "#0f172a",
-        "heading_color": "#ffffff",
-        "subheading_color": "#94a3b8",
+        "bg_color": "#ffffff",
+        "heading_color": "#0f172a",
+        "subheading_color": "#475569",
         "padding_top": 60,
         "padding_bottom": 60
       }
@@ -306,52 +306,6 @@
         "padding_top": 60,
         "padding_bottom": 60
       }
-    },
-    "reviews_section": {
-      "type": "reviews-slider",
-      "blocks": {
-        "rev-1": {
-          "type": "review",
-          "settings": {
-            "author": "David R.",
-            "location": "Dallas, TX",
-            "text": "Las ofertas flash son 100% reales. Compré un reflector solar LED con 40% de descuento y la potencia de iluminación es impresionante.",
-            "product_tag": "Compró: Reflector Solar LED 100W"
-          }
-        },
-        "rev-2": {
-          "type": "review",
-          "settings": {
-            "author": "Elena G.",
-            "location": "San Antonio, TX",
-            "text": "Me encantó la atención y el empaque. Productos de electricidad bien protegidos y entrega rápida. Definitivamente volveré a comprar.",
-            "product_tag": "Compró: Termostato Digital + Cableado"
-          }
-        },
-        "rev-3": {
-          "type": "review",
-          "settings": {
-            "author": "Martín S.",
-            "location": "Austin, TX",
-            "text": "Buscaba herramientas buenas para remodelar mi casa sin gastar una fortuna. Flash Deals tiene los mejores precios que he visto en Texas.",
-            "product_tag": "Compró: Destornillador Pro 20V"
-          }
-        }
-      },
-      "block_order": [
-        "rev-1",
-        "rev-2",
-        "rev-3"
-      ],
-      "settings": {
-        "heading": "Clientes Satisfechos en Texas",
-        "subheading": "Opiniones reales sobre calidad, rapidez de entrega y precios sin competencia",
-        "bg_color": "#121418",
-        "heading_color": "#f3f4f6",
-        "subheading_color": "#9ca3af",
-        "padding_top": 60,
-        "padding_bottom": 60
-      }
     }
   },
   "order": [
@@ -362,7 +316,6 @@
     "flash_deals",
     "category_grid",
     "liquidation_model",
-    "liquidation_faq",
-    "reviews_section"
+    "liquidation_faq"
   ]
 }

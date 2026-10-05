@@ -29,16 +29,16 @@
         "email-form"
       ],
       "settings": {
-        "color_scheme": "scheme-3",
+        "color_scheme": "scheme-2",
         "full_width": true,
-        "padding_top": 28,
-        "padding_bottom": 0
+        "padding_top": 44,
+        "padding_bottom": 24
       }
     },
     "footer": {
       "type": "footer",
       "settings": {
-        "color_scheme": "scheme-3",
+        "color_scheme": "scheme-2",
         "newsletter_enable": false,
         "newsletter_heading": "Subscribe to our emails",
         "enable_follow_on_shop": true,
