@@ -5,7 +5,7 @@
     border-bottom: 1px solid {{ section.settings.border_color }};
     overflow: hidden;
     position: relative;
-    padding: 0.85rem 0;
+    padding: 0.5rem 0;
     user-select: none;
   }
 
@@ -33,23 +33,23 @@
   .operational-ticker-item {
     display: inline-flex;
     align-items: center;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.12em;
     color: {{ section.settings.text_color }};
     white-space: nowrap;
-    padding: 0 1.75rem;
+    padding: 0 1.35rem;
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   }
 
   .operational-ticker-dot {
     display: inline-block;
-    width: 5px;
-    height: 5px;
+    width: 4px;
+    height: 4px;
     border-radius: 50%;
     background-color: {{ section.settings.accent_color }};
-    margin-right: 1.75rem;
+    margin-right: 1.35rem;
     opacity: 0.85;
   }
 {%- endstyle -%}

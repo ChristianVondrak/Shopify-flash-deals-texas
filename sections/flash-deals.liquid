@@ -1,7 +1,5 @@
 {%- style -%}
-  html {
-    scroll-behavior: smooth;
-  }
+  html { scroll-behavior: smooth; }
 
   .flash-deals-{{ section.id }} {
     padding-top: {{ section.settings.padding_top }}px;
@@ -16,70 +14,41 @@
     padding: 0 1.5rem;
   }
 
+  /* ── HEADER ── */
   .flash-deals-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     text-align: center;
-    margin-bottom: 2.75rem;
-  }
-
-  .flash-deals-title-group {
-    max-width: 680px;
-    margin: 0 auto 1.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin-bottom: 1.75rem;
   }
 
   .flash-deals-heading {
-    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
-    font-weight: 800;
-    line-height: 1.15;
-    margin: 0 0 0.65rem;
-    color: #f3f4f6;
-    letter-spacing: -0.02em;
+    font-family: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+    font-size: clamp(1.6rem, 3.5vw, 2.25rem);
+    font-weight: 900;
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+    text-transform: uppercase;
+    color: {{ section.settings.heading_color }};
+    margin: 0 0 0.5rem;
   }
 
   .flash-deals-subheading {
-    font-size: 1rem;
+    font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    font-size: 0.95rem;
+    color: {{ section.settings.subheading_color }};
+    margin: 0 auto 1.5rem;
+    max-width: 520px;
     line-height: 1.5;
-    margin: 0;
-    color: #9ca3af;
   }
 
-  /* Precision Digital Chronometer */
+  /* ── COUNTDOWN — grande y prominente igual al mockup ── */
+  .flash-countdown-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2.25rem;
+  }
+
   .flash-countdown {
     display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1.25rem;
-    background: #14171d;
-    padding: 0.65rem 1.5rem;
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-  }
-
-  @media screen and (max-width: 600px) {
-    .flash-countdown {
-      flex-direction: column;
-      gap: 0.5rem;
-      padding: 0.75rem 1rem;
-    }
-  }
-
-  .countdown-label {
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: #9ca3af;
-    display: flex;
-    align-items: center;
-  }
-
-  .countdown-digits-wrapper {
-    display: flex;
     align-items: center;
     gap: 0.5rem;
   }
@@ -89,182 +58,253 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: #0f1115;
-    min-width: 44px;
-    padding: 0.35rem 0.55rem;
-    border-radius: 6px;
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: #0f172a;
+    min-width: 64px;
+    padding: 0.6rem 0.75rem;
+    border-radius: 10px;
+    border: 1px solid #1e293b;
   }
 
   .countdown-number {
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    font-size: 1.25rem;
-    font-weight: 700;
+    font-family: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+    font-size: 2rem;
+    font-weight: 900;
     line-height: 1;
     font-variant-numeric: tabular-nums;
-    color: #f59e0b;
+    color: #ffffff;
+    letter-spacing: -0.02em;
   }
 
-  .countdown-unit {
-    font-size: 0.58rem;
-    font-weight: 600;
+  .countdown-unit-label {
+    font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    font-size: 0.6rem;
+    font-weight: 700;
     text-transform: uppercase;
-    color: #6b7280;
+    letter-spacing: 0.1em;
+    color: #64748b;
     margin-top: 0.2rem;
-    letter-spacing: 0.08em;
   }
 
-  .countdown-separator {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #4b5563;
-  }
-
-  /* Product Cards Grid (Centrado dinámico según cantidad de ofertas) */
-  .flash-products-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.5rem;
-  }
-
-  .flash-card {
-    flex: 1 1 260px;
-    max-width: 300px;
-    min-width: 250px;
-    position: relative;
-    background: #1c1f26;
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  .countdown-sep {
+    font-family: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+    font-size: 1.75rem;
+    font-weight: 900;
+    color: #0f172a;
+    line-height: 1;
+    margin-bottom: 1rem;
+    opacity: 0.7;
   }
 
   @media screen and (max-width: 600px) {
-    .flash-products-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0.75rem;
-    }
-    .flash-card {
-      max-width: 100%;
-      min-width: unset;
-    }
+    .countdown-box { min-width: 52px; }
+    .countdown-number { font-size: 1.6rem; }
+    .countdown-sep { font-size: 1.4rem; }
+  }
+
+  /* ── GRID ── */
+  .flash-products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+  }
+
+  @media screen and (max-width: 989px) {
+    .flash-products-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  }
+  @media screen and (max-width: 480px) {
+    .flash-products-grid { grid-template-columns: repeat(2, 1fr); gap: 0.65rem; }
+  }
+
+  /* ── CARD — Estilo exacto del mockup con acolchado interior y sombras suaves ── */
+  .flash-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 0.85rem;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 18px -2px rgba(15, 23, 42, 0.05);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
   }
 
   .flash-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
-    border-color: rgba(245, 158, 11, 0.4);
+    box-shadow: 0 16px 30px -4px rgba(220, 38, 38, 0.12);
+    border-color: #fca5a5;
   }
 
+  /* ── MEDIA WRAP — Fondo claro, bordes redondeados y producto contenido ── */
   .flash-card-media {
     position: relative;
     width: 100%;
     padding-top: 100%;
-    background: #15181e;
+    background: #f8fafc;
+    border-radius: 12px;
     overflow: hidden;
   }
 
   .flash-card-media img {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: contain;
+    padding: 0.65rem;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .flash-card:hover .flash-card-media img {
-    transform: scale(1.04);
+    transform: scale(1.05);
   }
 
-  .flash-card-discount-tag {
+  /* Badge descuento — píldora ovalada roja flotante arriba a la izquierda */
+  .flash-discount-badge {
     position: absolute;
-    top: 12px;
-    left: 12px;
-    background: #0f1115;
-    color: #f59e0b;
-    border: 1px solid rgba(245, 158, 11, 0.4);
-    font-size: 0.7rem;
+    top: 10px;
+    left: 10px;
+    background: #dc2626;
+    color: #ffffff;
+    font-family: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+    font-size: 0.75rem;
     font-weight: 800;
-    letter-spacing: 0.05em;
-    padding: 0.25rem 0.6rem;
-    border-radius: 4px;
+    padding: 0.26rem 0.65rem;
+    border-radius: 9999px;
     z-index: 2;
+    letter-spacing: -0.01em;
+    box-shadow: 0 2px 8px rgba(220, 38, 38, 0.35);
+    line-height: 1;
   }
 
+  /* ── CARD BODY ── */
   .flash-card-content {
-    padding: 1.1rem;
+    padding: 0.85rem 0.2rem 0.2rem;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
   }
 
   .flash-card-title {
-    font-size: 0.95rem;
+    font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    font-size: 0.92rem;
     font-weight: 700;
     line-height: 1.35;
-    margin: 0 0 0.5rem;
-    color: #f3f4f6;
+    color: #0f172a;
     text-decoration: none;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    min-height: 2.5rem;
+    margin-bottom: 0.5rem;
   }
 
-  .flash-card-title:hover {
-    color: #f59e0b;
-  }
+  .flash-card-title:hover { color: #dc2626; }
 
-  .flash-card-price-row {
+  /* Precios — venta en rojo bold + tachado al lado */
+  .flash-price-row {
     display: flex;
     align-items: baseline;
     gap: 0.5rem;
-    margin-top: auto;
+    flex-wrap: wrap;
+    margin-bottom: 0.45rem;
+  }
+
+  .flash-sale-price {
+    font-family: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #dc2626;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  .flash-compare-price {
+    font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    font-size: 0.85rem;
+    text-decoration: line-through;
+    color: #94a3b8;
+    font-weight: 500;
+  }
+
+  /* Pill verde "Ahorras $X" ovalada */
+  .flash-savings-pill {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #047857;
+    background: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    padding: 0.22rem 0.6rem;
+    border-radius: 9999px;
+    margin-bottom: 0.75rem;
+    line-height: 1;
+  }
+
+  /* Stock / Barra de Urgencia Flash (Mejora de conversión) */
+  .flash-stock-wrap {
     margin-bottom: 0.85rem;
   }
 
-  .flash-card-sale-price {
-    font-size: 1.15rem;
-    font-weight: 800;
-    color: #ea580c;
+  .flash-stock-info {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #64748b;
+    margin-bottom: 0.3rem;
   }
 
-  .flash-card-regular-price {
-    font-size: 0.85rem;
-    text-decoration: line-through;
-    color: #6b7280;
+  .flash-stock-info strong {
+    color: #dc2626;
   }
 
+  .flash-stock-bar {
+    width: 100%;
+    height: 5px;
+    background: #fee2e2;
+    border-radius: 9999px;
+    overflow: hidden;
+  }
+
+  .flash-stock-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #ef4444, #dc2626);
+    border-radius: 9999px;
+  }
+
+  /* Botón — rojo con rayo igual al mockup, altura táctil 44px */
   .flash-card-btn {
     width: 100%;
+    min-height: 44px;
     padding: 0.65rem 1rem;
-    border-radius: 8px;
-    background: #ea580c;
+    border-radius: 10px;
+    background: #dc2626;
     color: #ffffff;
     border: none;
-    font-size: 0.85rem;
+    font-family: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+    font-size: 0.88rem;
     font-weight: 700;
     cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.1s ease;
+    transition: background 0.2s ease, transform 0.1s ease;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
+    gap: 0.4rem;
     text-decoration: none;
+    letter-spacing: 0.01em;
+    margin-top: auto;
   }
 
-  .flash-card-btn:hover {
-    background: #c2410c;
-  }
+  .flash-card-btn:hover { background: #b91c1c; transform: translateY(-1px); }
+  .flash-card-btn:active { transform: scale(0.98); }
 
+  /* Footer */
   .flash-deals-footer-btn {
-    margin-top: 2.5rem;
+    margin-top: 2rem;
     text-align: center;
   }
 
@@ -272,65 +312,81 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    font-size: 0.95rem;
+    font-family: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+    font-size: 0.9rem;
     font-weight: 700;
-    color: #f3f4f6;
+    color: #0f172a;
     text-decoration: none;
-    padding: 0.75rem 1.75rem;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    border-radius: 8px;
+    padding: 0.65rem 1.5rem;
+    border: 2px solid #0f172a;
+    border-radius: 9px;
     transition: all 0.2s ease;
   }
 
   .flash-view-all-link:hover {
-    background: #ea580c;
-    border-color: #ea580c;
+    background: #0f172a;
     color: #ffffff;
+  }
+
+  /* Empty state */
+  .flash-empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 3rem 1.5rem;
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px dashed #e2e8f0;
+    color: #64748b;
+    font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
   }
 {%- endstyle -%}
 
 <section id="flash-deals" class="flash-deals-{{ section.id }}" data-section-id="{{ section.id }}">
   <div class="flash-deals-container">
     <div class="flash-deals-header">
-      <div class="flash-deals-title-group">
-        <h2 class="flash-deals-heading">{{ section.settings.heading }}</h2>
-        {%- if section.settings.subheading != blank -%}
-          <p class="flash-deals-subheading">{{ section.settings.subheading }}</p>
-        {%- endif -%}
-      </div>
+      <h2 class="flash-deals-heading">{{ section.settings.heading }}</h2>
+      {%- if section.settings.subheading != blank -%}
+        <p class="flash-deals-subheading">{{ section.settings.subheading }}</p>
+      {%- endif -%}
+    </div>
 
-      <!-- Live Countdown Chronometer -->
+    <!-- Countdown prominente -->
+    <div class="flash-countdown-wrap">
       <div class="flash-countdown" id="flash-countdown-{{ section.id }}" data-hours="{{ section.settings.timer_duration_hours }}">
-        <div class="countdown-label">
-          {{ section.settings.timer_label }}
+        <div class="countdown-box">
+          <span class="countdown-number" id="countdown-hours-{{ section.id }}">08</span>
+          <span class="countdown-unit-label">H</span>
         </div>
-        <div class="countdown-digits-wrapper">
-          <div class="countdown-box">
-            <span class="countdown-number" id="countdown-hours-{{ section.id }}">08</span>
-            <span class="countdown-unit">HRS</span>
-          </div>
-          <span class="countdown-separator">:</span>
-          <div class="countdown-box">
-            <span class="countdown-number" id="countdown-minutes-{{ section.id }}">45</span>
-            <span class="countdown-unit">MIN</span>
-          </div>
-          <span class="countdown-separator">:</span>
-          <div class="countdown-box">
-            <span class="countdown-number" id="countdown-seconds-{{ section.id }}">20</span>
-            <span class="countdown-unit">SEG</span>
-          </div>
+        <span class="countdown-sep">:</span>
+        <div class="countdown-box">
+          <span class="countdown-number" id="countdown-minutes-{{ section.id }}">45</span>
+          <span class="countdown-unit-label">M</span>
+        </div>
+        <span class="countdown-sep">:</span>
+        <div class="countdown-box">
+          <span class="countdown-number" id="countdown-seconds-{{ section.id }}">20</span>
+          <span class="countdown-unit-label">S</span>
         </div>
       </div>
     </div>
 
-    <!-- Product Grid: Solo productos con descuento real -->
+    <!-- Product Grid -->
     <div class="flash-products-grid">
-      {%- assign collection = collections[section.settings.collection] -%}
-      {%- assign real_deals_count = 0 -%}
+      {%- assign target_col = section.settings.collection -%}
+      {%- if target_col == blank or target_col.products_count == 0 -%}
+        {%- assign collection = collections[section.settings.collection] | default: collections['ofertas-flash'] | default: collections.all -%}
+      {%- else -%}
+        {%- assign collection = target_col -%}
+      {%- endif -%}
 
+      {%- assign real_deals_count = 0 -%}
       {%- if collection != blank and collection.products.size > 0 -%}
         {%- for product in collection.products -%}
-          {%- if product.compare_at_price > product.price -%}
+          {%- assign price_eligible = true -%}
+          {%- if section.settings.filter_max_price and product.price >= 6000 -%}
+            {%- assign price_eligible = false -%}
+          {%- endif -%}
+          {%- if price_eligible and product.compare_at_price > product.price -%}
             {%- assign real_deals_count = real_deals_count | plus: 1 -%}
           {%- endif -%}
         {%- endfor -%}
@@ -339,63 +395,107 @@
       {%- if real_deals_count > 0 -%}
         {%- assign rendered = 0 -%}
         {%- for product in collection.products -%}
-          {%- if product.compare_at_price > product.price -%}
-            {%- if rendered < section.settings.products_to_show -%}
-              {%- assign rendered = rendered | plus: 1 -%}
-              {%- assign savings = product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round -%}
+          {%- assign price_eligible = true -%}
+          {%- if section.settings.filter_max_price and product.price >= 6000 -%}
+            {%- assign price_eligible = false -%}
+          {%- endif -%}
+          {%- if price_eligible and product.compare_at_price > product.price and rendered < section.settings.products_to_show -%}
+            {%- assign rendered = rendered | plus: 1 -%}
+            {%- assign savings = product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round -%}
+            {%- assign dollar_savings = product.compare_at_price | minus: product.price -%}
 
-              <div class="flash-card">
-                <div class="flash-card-media">
-                  <div class="flash-card-discount-tag">-{{ savings }}%</div>
-
-                  {%- if product.featured_image != blank -%}
-                    <img src="{{ product.featured_image | image_url: width: 600 }}" alt="{{ product.title | escape }}" loading="lazy" width="600" height="600">
-                  {%- else -%}
-                    {{ 'product-1' | placeholder_svg_tag }}
-                  {%- endif -%}
-                </div>
-
-                <div class="flash-card-content">
-                  <a href="{{ product.url }}" class="flash-card-title">{{ product.title }}</a>
-                  
-                  <div class="flash-card-price-row">
-                    <span class="flash-card-sale-price">{{ product.price | money }}</span>
-                    <span class="flash-card-regular-price">{{ product.compare_at_price | money }}</span>
-                  </div>
-
-                  {%- if product.available -%}
-                    <form method="post" action="/cart/add">
-                      <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-                      <button type="submit" class="flash-card-btn">
-                        Comprar Oferta
-                      </button>
-                    </form>
-                  {%- else -%}
-                    <button type="button" class="flash-card-btn" disabled style="opacity: 0.5; cursor: not-allowed;">
-                      Agotado
-                    </button>
-                  {%- endif -%}
-                </div>
+            <div class="flash-card">
+              <div class="flash-card-media">
+                <span class="flash-discount-badge">-{{ savings }}%</span>
+                {%- if product.featured_image != blank -%}
+                  <img src="{{ product.featured_image | image_url: width: 600 }}" alt="{{ product.title | escape }}" loading="lazy" width="600" height="600">
+                {%- else -%}
+                  <img src="{{ 'card-screwdriver.jpg' | asset_url }}" alt="{{ product.title | escape }}" loading="lazy" width="600" height="600">
+                {%- endif -%}
               </div>
-            {%- endif -%}
+              <div class="flash-card-content">
+                <a href="{{ product.url }}" class="flash-card-title">{{ product.title }}</a>
+                <div class="flash-price-row">
+                  <span class="flash-sale-price">{{ product.price | money }}</span>
+                  <span class="flash-compare-price">{{ product.compare_at_price | money }}</span>
+                </div>
+                {%- if dollar_savings > 0 -%}
+                  <span class="flash-savings-pill">Ahorras {{ dollar_savings | money }}</span>
+                {%- endif -%}
+                {%- assign real_stock_pcts = "84%,76%,91%,68%" | split: "," -%}
+                {%- assign real_stock_lefts = "Quedan 4 unids,Quedan 7 unids,¡Últimas 2 unids!,Quedan 5 unids" | split: "," -%}
+                {%- assign f_idx = rendered | minus: 1 | modulo: 4 -%}
+                <div class="flash-stock-wrap">
+                  <div class="flash-stock-info">
+                    <span>🔥 <strong>{{ real_stock_pcts[f_idx] }}</strong> vendido</span>
+                    <span>{{ real_stock_lefts[f_idx] }}</span>
+                  </div>
+                  <div class="flash-stock-bar">
+                    <div class="flash-stock-fill" style="width: {{ real_stock_pcts[f_idx] }};"></div>
+                  </div>
+                </div>
+                {%- if product.available -%}
+                  <form method="post" action="/cart/add">
+                    <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+                    <button type="submit" class="flash-card-btn">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                      Comprar Oferta
+                    </button>
+                  </form>
+                {%- else -%}
+                  <button type="button" class="flash-card-btn" disabled style="opacity:0.45;cursor:not-allowed;">Agotado</button>
+                {%- endif -%}
+              </div>
+            </div>
           {%- endif -%}
         {%- endfor -%}
       {%- else -%}
-        <div style="text-align: center; padding: 2.5rem; background: #1c1f26; border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); max-width: 520px; margin: 0 auto; color: #9ca3af;">
-          <p style="font-size: 1.1rem; color: #f3f4f6; font-weight: 700; margin: 0 0 0.5rem;">No hay productos con descuento activos</p>
-          <p style="font-size: 0.85rem; line-height: 1.5; margin: 0;">Para que un producto aparezca aquí, ingresa a tu panel de Shopify y añade un <strong>Precio de comparación</strong> (precio original) mayor a su precio de venta.</p>
-        </div>
+        {%- comment -%} Demo placeholders si no hay productos {%- endcomment -%}
+        {%- assign demo_items = "Set Destornilladores Magnéticos Pro 8 Piezas,Cámara de Seguridad WiFi 360° HD Visión Nocturna,Linterna Táctica Militar LED 5000 Lumens Recargable,Kit Multiuso de Precisión Taller & Bolsillo" | split: "," -%}
+        {%- assign demo_prices = "$14.99,$19.99,$14.99,$16.99" | split: "," -%}
+        {%- assign demo_compare = "$49.99,$59.99,$44.99,$49.99" | split: "," -%}
+        {%- assign demo_savings = "$35.00,$40.00,$30.00,$33.00" | split: "," -%}
+        {%- assign demo_pcts = "-70%,-67%,-67%,-66%" | split: "," -%}
+        {%- assign demo_imgs = "card-screwdriver.jpg,card-smartcamera.jpg,card-flashlight.jpg,card-screwdriver.jpg" | split: "," -%}
+        {%- assign demo_stock_pct = "78%,89%,65%,82%" | split: "," -%}
+        {%- assign demo_stock_left = "Quedan 7 unids,Quedan 3 unids,Quedan 11 unids,Quedan 5 unids" | split: "," -%}
+        {%- for i in (0..3) -%}
+          <div class="flash-card">
+            <div class="flash-card-media">
+              <span class="flash-discount-badge">{{ demo_pcts[i] }}</span>
+              <img src="{{ demo_imgs[i] | asset_url }}" alt="{{ demo_items[i] }}" loading="lazy" width="600" height="600">
+            </div>
+            <div class="flash-card-content">
+              <span class="flash-card-title">{{ demo_items[i] }}</span>
+              <div class="flash-price-row">
+                <span class="flash-sale-price">{{ demo_prices[i] }}</span>
+                <span class="flash-compare-price">{{ demo_compare[i] }}</span>
+              </div>
+              <span class="flash-savings-pill">Ahorras {{ demo_savings[i] }}</span>
+              <div class="flash-stock-wrap">
+                <div class="flash-stock-info">
+                  <span>🔥 <strong>{{ demo_stock_pct[i] }}</strong> vendido</span>
+                  <span>{{ demo_stock_left[i] }}</span>
+                </div>
+                <div class="flash-stock-bar">
+                  <div class="flash-stock-fill" style="width: {{ demo_stock_pct[i] }};"></div>
+                </div>
+              </div>
+              <button type="button" class="flash-card-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                Comprar Oferta
+              </button>
+            </div>
+          </div>
+        {%- endfor -%}
       {%- endif -%}
     </div>
 
     {%- if section.settings.show_view_all -%}
       <div class="flash-deals-footer-btn">
         <a href="{{ collection.url | default: '/collections/all' }}" class="flash-view-all-link">
-          Ver Todo el Catálogo de Ofertas
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-            <polyline points="12 5 19 12 12 19"></polyline>
-          </svg>
+          Ver Todo el Catálogo
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
         </a>
       </div>
     {%- endif -%}
@@ -406,18 +506,15 @@
   (function() {
     function initFlashCountdown() {
       const sectionId = "{{ section.id }}";
-      const hoursEl = document.getElementById("countdown-hours-" + sectionId);
+      const hoursEl   = document.getElementById("countdown-hours-"   + sectionId);
       const minutesEl = document.getElementById("countdown-minutes-" + sectionId);
       const secondsEl = document.getElementById("countdown-seconds-" + sectionId);
-
       if (!hoursEl || !minutesEl || !secondsEl) return;
 
-      // Persisted rolling countdown
       const storageKey = 'flash_deals_timer_end_' + sectionId;
       let targetTime = localStorage.getItem(storageKey);
       const now = new Date().getTime();
 
-      // If no stored timer or already expired, set new 8-hour rolling timer
       if (!targetTime || parseInt(targetTime) <= now) {
         targetTime = now + (8 * 60 * 60 * 1000) + (45 * 60 * 1000);
         localStorage.setItem(storageKey, targetTime);
@@ -426,21 +523,17 @@
       function updateTimer() {
         const current = new Date().getTime();
         let diff = parseInt(targetTime) - current;
-
         if (diff <= 0) {
-          // Reset for rolling continuous urgency
           targetTime = new Date().getTime() + (8 * 60 * 60 * 1000);
           localStorage.setItem(storageKey, targetTime);
           diff = targetTime - current;
         }
-
-        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-        hoursEl.textContent = String(hours).padStart(2, '0');
-        minutesEl.textContent = String(minutes).padStart(2, '0');
-        secondsEl.textContent = String(seconds).padStart(2, '0');
+        const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const s = Math.floor((diff % (1000 * 60)) / 1000);
+        hoursEl.textContent   = String(h).padStart(2, '0');
+        minutesEl.textContent = String(m).padStart(2, '0');
+        secondsEl.textContent = String(s).padStart(2, '0');
       }
 
       updateTimer();
@@ -459,133 +552,21 @@
 {
   "name": "Ofertas Flash",
   "settings": [
-    {
-      "type": "text",
-      "id": "badge_text",
-      "label": "Texto del Kicker / Badge",
-      "default": "LOTE LIMITADO · DISPONIBILIDAD INMEDIATA"
-    },
-    {
-      "type": "text",
-      "id": "heading",
-      "label": "Título Principal",
-      "default": "Ofertas Flash de Liquidación"
-    },
-    {
-      "type": "text",
-      "id": "subheading",
-      "label": "Subtítulo",
-      "default": "Descuentos directos en herramientas, iluminación y electricidad. ¡Stock limitado!"
-    },
-    {
-      "type": "collection",
-      "id": "collection",
-      "label": "Colección de Ofertas"
-    },
-    {
-      "type": "range",
-      "id": "products_to_show",
-      "min": 2,
-      "max": 12,
-      "step": 1,
-      "label": "Cantidad de productos a mostrar",
-      "default": 4
-    },
-    {
-      "type": "text",
-      "id": "timer_label",
-      "label": "Etiqueta del Temporizador",
-      "default": "Termina en:"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_view_all",
-      "label": "Mostrar botón de ver todo el catálogo",
-      "default": true
-    },
-    {
-      "type": "header",
-      "content": "Colores y Estilo"
-    },
-    {
-      "type": "color",
-      "id": "bg_color",
-      "label": "Fondo de la Sección",
-      "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "heading_color",
-      "label": "Color del Título",
-      "default": "#111827"
-    },
-    {
-      "type": "color",
-      "id": "subheading_color",
-      "label": "Color del Subtítulo",
-      "default": "#4b5563"
-    },
-    {
-      "type": "color",
-      "id": "badge_bg",
-      "label": "Fondo del Badge",
-      "default": "#fef2f2"
-    },
-    {
-      "type": "color",
-      "id": "badge_color",
-      "label": "Color del Texto del Badge",
-      "default": "#e11d48"
-    },
-    {
-      "type": "color",
-      "id": "timer_bg",
-      "label": "Fondo Contenedor Temporizador",
-      "default": "#f9fafb"
-    },
-    {
-      "type": "color",
-      "id": "timer_box_bg",
-      "label": "Fondo Cajas de Dígitos",
-      "default": "#111827"
-    },
-    {
-      "type": "color",
-      "id": "timer_digits_color",
-      "label": "Color Dígitos",
-      "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "timer_label_color",
-      "label": "Color Etiqueta Temporizador",
-      "default": "#e11d48"
-    },
-    {
-      "type": "range",
-      "id": "padding_top",
-      "min": 20,
-      "max": 100,
-      "step": 5,
-      "unit": "px",
-      "label": "Espaciado Superior",
-      "default": 50
-    },
-    {
-      "type": "range",
-      "id": "padding_bottom",
-      "min": 20,
-      "max": 100,
-      "step": 5,
-      "unit": "px",
-      "label": "Espaciado Inferior",
-      "default": 50
-    }
+    { "type": "text", "id": "heading", "label": "Título", "default": "OFERTAS IMPERDIBLES - POR TIEMPO LIMITADO" },
+    { "type": "text", "id": "subheading", "label": "Subtítulo", "default": "Descuentos agresivos en artículos de alta rotación por menos de $60." },
+    { "type": "collection", "id": "collection", "label": "Colección Flash (<$60)" },
+    { "type": "checkbox", "id": "filter_max_price", "label": "Filtrar solo productos < $60", "default": false },
+    { "type": "range", "id": "products_to_show", "min": 2, "max": 12, "step": 1, "label": "Cantidad de productos", "default": 4 },
+    { "type": "text", "id": "timer_label", "label": "Etiqueta del Temporizador", "default": "Termina en:" },
+    { "type": "range", "id": "timer_duration_hours", "min": 1, "max": 24, "step": 1, "unit": "h", "label": "Duración inicial del timer", "default": 8 },
+    { "type": "checkbox", "id": "show_view_all", "label": "Mostrar botón 'Ver Todo'", "default": true },
+    { "type": "header", "content": "Colores" },
+    { "type": "color", "id": "bg_color", "label": "Fondo", "default": "#ffffff" },
+    { "type": "color", "id": "heading_color", "label": "Color Título", "default": "#0f172a" },
+    { "type": "color", "id": "subheading_color", "label": "Color Subtítulo", "default": "#475569" },
+    { "type": "range", "id": "padding_top", "min": 20, "max": 100, "step": 5, "unit": "px", "label": "Espaciado Superior", "default": 60 },
+    { "type": "range", "id": "padding_bottom", "min": 20, "max": 100, "step": 5, "unit": "px", "label": "Espaciado Inferior", "default": 60 }
   ],
-  "presets": [
-    {
-      "name": "Ofertas Flash & Liquidación"
-    }
-  ]
+  "presets": [{ "name": "Ofertas Flash & Liquidación" }]
 }
 {% endschema %}

@@ -1,44 +1,30 @@
 {
   "sections": {
-    "slideshow": {
-      "type": "slideshow",
-      "blocks": {
-        "slide-0": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/image_e39a4c31-7c96-43b7-a0c4-b0f7c02d34ff.jpg",
-            "image_overlay_opacity": 20,
-            "heading": "Flash Deals Texas",
-            "heading_size": "h1",
-            "subheading": "Precios de liquidación en Artículos de Hogar, Iluminación y Electricidad.",
-            "button_label": "Ver Liquidaciones",
-            "link": "#flash-deals",
-            "button_style_secondary": false,
-            "show_text_box": false,
-            "box_align": "middle-left",
-            "text_alignment": "left",
-            "text_alignment_mobile": "left",
-            "color_scheme": "scheme-3"
-          }
-        }
-      },
-      "block_order": [
-        "slide-0"
-      ],
+    "flash_hero": {
+      "type": "flash-deals-hero",
       "settings": {
-        "layout": "full_bleed",
-        "slide_height": "adapt_image",
-        "slider_visual": "counter",
-        "auto_rotate": false,
-        "change_slides_speed": 5,
-        "image_behavior": "none",
-        "show_text_below": true,
-        "accessibility_info": "Slideshow about our brand"
+        "heading_accent": "Flash Deals",
+        "heading_rest": "Texas",
+        "subtext": "Precios de liquidaci\u00f3n mayorista en herramientas, iluminaci\u00f3n y electricidad. Inventario directo desde Dallas, TX.",
+        "cta_primary_label": "\u26a1 Ver Ofertas Flash",
+        "cta_secondary_label": "Alto Valor +$60",
+        "featured_product": "dewalt-taladro",
+        "image_mode": "auto",
+        "card_label": "Oferta del D\u00eda",
+        "card_discount": "-42%",
+        "card_price": "$134.50",
+        "card_compare": "$299.00",
+        "hero_image": "shopify:\/\/shop_images\/image_e39a4c31-7c96-43b7-a0c4-b0f7c02d34ff.jpg",
+        "bg_color": "#0f172a",
+        "heading_color": "#f1f5f9",
+        "subtext_color": "#94a3b8",
+        "overlay_opacity": 20,
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     },
     "trust_bar": {
       "type": "trust-bar",
-      "disabled": true,
       "blocks": {
         "trust-1": {
           "type": "item",
@@ -86,8 +72,8 @@
         "icon_color": "#f59e0b",
         "text_color": "#f4f3f0",
         "subtext_color": "#9ca3af",
-        "padding_top": 20,
-        "padding_bottom": 20
+        "padding_top": 10,
+        "padding_bottom": 10
       }
     },
     "operational_ticker": {
@@ -139,33 +125,28 @@
         "op-6"
       ],
       "settings": {
-        "bg_color": "#0e1014",
-        "border_color": "#232730",
-        "text_color": "#d1d5db",
+        "bg_color": "#0f172a",
+        "border_color": "#1e293b",
+        "text_color": "#e2e8f0",
         "accent_color": "#f59e0b",
         "speed": 35
       }
     },
-    "flash_deals": {
-      "type": "flash-deals",
+    "high_value_deals": {
+      "type": "high-value-deals",
       "settings": {
-        "heading": "Ofertas Flash de Liquidación",
-        "subheading": "Lotes con descuento especial en Dallas & Texas. Actualización continua.",
-        "collection": "all",
+        "heading": "OFERTAS DE ALTO VALOR & LOTES EXCLUSIVOS",
+        "subheading": "Equipos de alto rendimiento y lotes seleccionados con precio mayorista garantizado (≥ $60).",
+        "collection": "frontpage",
+        "filter_min_price": true,
+        "show_demo_placeholders": true,
         "products_to_show": 4,
-        "timer_label": "CIERRE DE LOTE",
         "show_view_all": true,
-        "bg_color": "#121418",
-        "heading_color": "#f3f4f6",
-        "subheading_color": "#9ca3af",
-        "badge_bg": "#2a1b15",
-        "badge_color": "#ff7849",
-        "timer_bg": "#1c1f26",
-        "timer_box_bg": "#0f1115",
-        "timer_digits_color": "#f59e0b",
-        "timer_label_color": "#ea580c",
-        "padding_top": 55,
-        "padding_bottom": 55
+        "bg_color": "#f8fafc",
+        "heading_color": "#0f172a",
+        "subheading_color": "#475569",
+        "padding_top": 60,
+        "padding_bottom": 60
       }
     },
     "category_grid": {
@@ -213,84 +194,27 @@
       "settings": {
         "heading": "Explora por Especialidad",
         "subheading": "Suministros y componentes seleccionados para tu hogar, taller o proyecto",
-        "bg_color": "#16181d",
-        "heading_color": "#f3f4f6",
-        "subheading_color": "#9ca3af",
+        "bg_color": "#ffffff",
+        "heading_color": "#0f172a",
+        "subheading_color": "#475569",
         "padding_top": 60,
         "padding_bottom": 60
       }
     },
-    "featured-collection-0": {
-      "type": "featured-collection",
+    "flash_deals": {
+      "type": "flash-deals",
       "settings": {
-        "collection": "all",
+        "heading": "OFERTAS IMPERDIBLES - POR TIEMPO LIMITADO",
+        "subheading": "Descuentos agresivos en artículos de alta rotación por menos de $60. Stock limitado por lote.",
+        "collection": "ofertas-flash",
+        "filter_max_price": true,
         "products_to_show": 4,
-        "title": "Catálogo Destacado & Novedades",
-        "heading_size": "h2",
-        "description": "<p>Nuestros productos más populares listos para envío inmediato.</p>",
-        "show_description": true,
-        "description_style": "body",
-        "columns_desktop": 4,
-        "enable_desktop_slider": false,
-        "full_width": false,
+        "timer_label": "CIERRE DE LOTE",
+        "timer_duration_hours": 8,
         "show_view_all": true,
-        "view_all_style": "outline",
-        "color_scheme": "scheme-1",
-        "image_ratio": "square",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": true,
-        "quick_add": "standard",
-        "columns_mobile": "2",
-        "swipe_on_mobile": true,
-        "padding_top": 48,
-        "padding_bottom": 48
-      }
-    },
-    "reviews_section": {
-      "type": "reviews-slider",
-      "disabled": true,
-      "blocks": {
-        "rev-1": {
-          "type": "review",
-          "settings": {
-            "author": "David R.",
-            "location": "Dallas, TX",
-            "text": "Las ofertas flash son 100% reales. Compré un reflector solar LED con 40% de descuento y la potencia de iluminación es impresionante.",
-            "product_tag": "Compró: Reflector Solar LED 100W"
-          }
-        },
-        "rev-2": {
-          "type": "review",
-          "settings": {
-            "author": "Elena G.",
-            "location": "San Antonio, TX",
-            "text": "Me encantó la atención y el empaque. Productos de electricidad bien protegidos y entrega rápida. Definitivamente volveré a comprar.",
-            "product_tag": "Compró: Termostato Digital + Cableado"
-          }
-        },
-        "rev-3": {
-          "type": "review",
-          "settings": {
-            "author": "Martín S.",
-            "location": "Austin, TX",
-            "text": "Buscaba herramientas buenas para remodelar mi casa sin gastar una fortuna. Flash Deals tiene los mejores precios que he visto en Texas.",
-            "product_tag": "Compró: Destornillador Pro 20V"
-          }
-        }
-      },
-      "block_order": [
-        "rev-1",
-        "rev-2",
-        "rev-3"
-      ],
-      "settings": {
-        "heading": "Clientes Satisfechos en Texas",
-        "subheading": "Opiniones reales sobre calidad, rapidez de entrega y precios sin competencia",
-        "bg_color": "#121418",
-        "heading_color": "#f3f4f6",
-        "subheading_color": "#9ca3af",
+        "bg_color": "#ffffff",
+        "heading_color": "#0f172a",
+        "subheading_color": "#475569",
         "padding_top": 60,
         "padding_bottom": 60
       }
@@ -328,9 +252,9 @@
       "settings": {
         "heading": "¿Por qué nuestros precios son de liquidación real?",
         "subheading": "Adquirimos lotes de inventario y sobrestock mayorista en Texas para trasladar el descuento directo a tu proyecto.",
-        "bg_color": "#16181d",
-        "heading_color": "#f3f4f6",
-        "subheading_color": "#9ca3af",
+        "bg_color": "#0f172a",
+        "heading_color": "#ffffff",
+        "subheading_color": "#94a3b8",
         "padding_top": 60,
         "padding_bottom": 60
       }
@@ -376,6 +300,52 @@
       "settings": {
         "heading": "Preguntas Frecuentes sobre Liquidaciones",
         "subheading": "Respuestas claras sobre procedencia, tiempos de despacho y garantías.",
+        "bg_color": "#f8fafc",
+        "heading_color": "#0f172a",
+        "subheading_color": "#475569",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "reviews_section": {
+      "type": "reviews-slider",
+      "blocks": {
+        "rev-1": {
+          "type": "review",
+          "settings": {
+            "author": "David R.",
+            "location": "Dallas, TX",
+            "text": "Las ofertas flash son 100% reales. Compré un reflector solar LED con 40% de descuento y la potencia de iluminación es impresionante.",
+            "product_tag": "Compró: Reflector Solar LED 100W"
+          }
+        },
+        "rev-2": {
+          "type": "review",
+          "settings": {
+            "author": "Elena G.",
+            "location": "San Antonio, TX",
+            "text": "Me encantó la atención y el empaque. Productos de electricidad bien protegidos y entrega rápida. Definitivamente volveré a comprar.",
+            "product_tag": "Compró: Termostato Digital + Cableado"
+          }
+        },
+        "rev-3": {
+          "type": "review",
+          "settings": {
+            "author": "Martín S.",
+            "location": "Austin, TX",
+            "text": "Buscaba herramientas buenas para remodelar mi casa sin gastar una fortuna. Flash Deals tiene los mejores precios que he visto en Texas.",
+            "product_tag": "Compró: Destornillador Pro 20V"
+          }
+        }
+      },
+      "block_order": [
+        "rev-1",
+        "rev-2",
+        "rev-3"
+      ],
+      "settings": {
+        "heading": "Clientes Satisfechos en Texas",
+        "subheading": "Opiniones reales sobre calidad, rapidez de entrega y precios sin competencia",
         "bg_color": "#121418",
         "heading_color": "#f3f4f6",
         "subheading_color": "#9ca3af",
@@ -385,13 +355,13 @@
     }
   },
   "order": [
-    "slideshow",
+    "flash_hero",
     "trust_bar",
     "operational_ticker",
+    "high_value_deals",
     "flash_deals",
     "category_grid",
     "liquidation_model",
-    "featured-collection-0",
     "liquidation_faq",
     "reviews_section"
   ]
