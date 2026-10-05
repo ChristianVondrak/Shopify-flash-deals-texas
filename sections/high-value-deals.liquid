@@ -352,7 +352,7 @@
                   </div>
                 </div>
                 {%- if product.available -%}
-                  <form method="post" action="/cart/add">
+                  <form method="post" action="{{ routes.cart_add_url }}">
                     <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
                     <button type="submit" class="hvd-btn">Añadir al Carrito</button>
                   </form>
