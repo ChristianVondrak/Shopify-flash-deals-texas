@@ -257,7 +257,6 @@
                 class="grid product-grid  grid--{{ section.settings.columns_mobile }}-col-tablet-down grid--{{ section.settings.columns_desktop }}-col-desktop"
                 role="list"
               >
-                {%- assign skip_card_product_styles = false -%}
                 {%- for item in search.results -%}
                   {% assign lazy_load = false %}
                   {%- if forloop.index > 2 -%}
@@ -276,7 +275,6 @@
                           card_product: item,
                           section_id: section.id
                         %}
-                        {%- assign skip_card_product_styles = true -%}
                       {%- when 'article' -%}
                         {% render 'article-card',
                           article: item,
