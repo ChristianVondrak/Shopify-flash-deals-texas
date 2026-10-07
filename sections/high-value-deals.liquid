@@ -79,6 +79,9 @@
     background: #ffffff;
     border-radius: 14px;
     overflow: hidden;
+    display: block;
+    cursor: pointer;
+    text-decoration: none;
   }
 
   .hvd-card-media img {
@@ -299,7 +302,7 @@
 
 
             <div class="hvd-card">
-              <div class="hvd-card-media">
+              <a href="{{ product.url }}" class="hvd-card-media" aria-label="{{ product.title | escape }}">
                 {%- if savings > 0 -%}
                   <span class="hvd-discount-badge">-{{ savings }}%</span>
                 {%- endif -%}
@@ -308,7 +311,7 @@
                 {%- else -%}
                   <img src="{{ 'card-generator.jpg' | asset_url }}" alt="{{ product.title | escape }}" loading="lazy" width="600" height="600">
                 {%- endif -%}
-              </div>
+              </a>
               <div class="hvd-card-body">
                 <a href="{{ product.url }}" class="hvd-card-title">{{ product.title }}</a>
                 <div class="hvd-price-row">
@@ -351,12 +354,12 @@
         {%- for i in (start_idx..end_idx) -%}
           {%- assign mod_i = i | modulo: 4 -%}
           <div class="hvd-card">
-            <div class="hvd-card-media">
+            <a href="{{ section.settings.collection.url | default: '/collections/all' }}" class="hvd-card-media" aria-label="{{ demo_items[mod_i] | escape }}">
               <span class="hvd-discount-badge">{{ demo_pcts[mod_i] }}</span>
               <img src="{{ demo_imgs[mod_i] | asset_url }}" alt="{{ demo_items[mod_i] }}" loading="lazy" width="600" height="600">
-            </div>
+            </a>
             <div class="hvd-card-body">
-              <span class="hvd-card-title">{{ demo_items[mod_i] }}</span>
+              <a href="{{ section.settings.collection.url | default: '/collections/all' }}" class="hvd-card-title">{{ demo_items[mod_i] }}</a>
               <div class="hvd-price-row">
                 <span class="hvd-compare-price">{{ demo_compare[mod_i] }}</span>
                 <span class="hvd-sale-price">{{ demo_prices[mod_i] }}</span>

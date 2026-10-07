@@ -37,11 +37,39 @@
     },
     "footer": {
       "type": "footer",
+      "blocks": {
+        "about": {
+          "type": "text",
+          "settings": {
+            "heading": "Flash Deals Texas",
+            "subtext": "<p>Venta de lotes de liquidación, excedentes de inventario y retornos directos en Texas. Calidad verificada y despacho inmediato desde Houston.</p>"
+          }
+        },
+        "menu": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Explorar Catálogo",
+            "menu": "main-menu"
+          }
+        },
+        "contact": {
+          "type": "text",
+          "settings": {
+            "heading": "Contacto & Soporte",
+            "subtext": "<p><strong>Teléfono:</strong> <a href=\"tel:+12817065323\">+1 (281) 706-5323</a><br><strong>Email:</strong> <a href=\"mailto:flashdealstexas@gmail.com\">flashdealstexas@gmail.com</a><br><strong>WhatsApp:</strong> <a href=\"https://wa.me/12817065323\" target=\"_blank\">+1 (281) 706-5323</a><br><strong>Almacén:</strong> Houston, Texas</p>"
+          }
+        }
+      },
+      "block_order": [
+        "about",
+        "menu",
+        "contact"
+      ],
       "settings": {
         "color_scheme": "scheme-2",
         "newsletter_enable": false,
         "newsletter_heading": "Subscribe to our emails",
-        "enable_follow_on_shop": true,
+        "enable_follow_on_shop": false,
         "show_social": true,
         "enable_country_selector": true,
         "enable_language_selector": true,

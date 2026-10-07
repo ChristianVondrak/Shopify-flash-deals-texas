@@ -1,0 +1,116 @@
+{% comment %}
+  Renders a custom deal product card (Flash Deals or Alto Valor style)
+  Accepts:
+  - card_product: {Object} Product Liquid object
+  - card_type: {String} 'flash', 'hvd', or 'auto' (optional)
+  - section_id: {String} Section ID
+{% endcomment %}
+
+{%- liquid
+  assign product = card_product
+  assign type = card_type | default: 'auto'
+
+  if type == 'auto'
+    if collection.handle == 'ofertas-flash' or collection.handle contains 'flash'
+      assign type = 'flash'
+    elsif collection.handle == 'frontpage' or collection.handle contains 'alto-valor' or collection.handle contains 'high-value'
+      assign type = 'hvd'
+    elsif product.price >= 6000
+      assign type = 'hvd'
+    else
+      assign type = 'flash'
+    endif
+  endif
+
+  assign savings = 0
+  assign dollar_savings = 0
+  if product.compare_at_price > product.price
+    assign savings = product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round
+    assign dollar_savings = product.compare_at_price | minus: product.price
+  endif
+-%}
+
+<div class="deal-card deal-card--{{ type }} {% if type == 'hvd' %}hvd-card{% else %}flash-card{% endif %}">
+  <a
+    href="{{ product.url }}"
+    class="deal-card-media {% if type == 'hvd' %}hvd-card-media{% else %}flash-card-media{% endif %}"
+    aria-label="{{ product.title | escape }}"
+  >
+    {%- if savings > 0 -%}
+      <span class="deal-discount-badge {% if type == 'hvd' %}hvd-discount-badge{% else %}flash-discount-badge{% endif %}">-{{ savings }}%</span>
+    {%- endif -%}
+    {%- if product.featured_image != blank -%}
+      <img
+        src="{{ product.featured_image | image_url: width: 600 }}"
+        alt="{{ product.title | escape }}"
+        loading="lazy"
+        width="600"
+        height="600"
+      >
+    {%- else -%}
+      <img
+        src="{{ 'card-generator.jpg' | asset_url }}"
+        alt="{{ product.title | escape }}"
+        loading="lazy"
+        width="600"
+        height="600"
+      >
+    {%- endif -%}
+  </a>
+
+  <div class="deal-card-body {% if type == 'hvd' %}hvd-card-body{% else %}flash-card-content{% endif %}">
+    <a
+      href="{{ product.url }}"
+      class="deal-card-title {% if type == 'hvd' %}hvd-card-title{% else %}flash-card-title{% endif %}"
+    >
+      {{- product.title -}}
+    </a>
+
+    <div class="deal-price-row {% if type == 'hvd' %}hvd-price-row{% else %}flash-price-row{% endif %}">
+      {%- if type == 'hvd' -%}
+        {%- if product.compare_at_price > product.price -%}
+          <span class="deal-compare-price hvd-compare-price">{{ product.compare_at_price | money }}</span>
+        {%- endif -%}
+        <span class="deal-sale-price hvd-sale-price">{{ product.price | money }}</span>
+      {%- else -%}
+        <span class="deal-sale-price flash-sale-price">{{ product.price | money }}</span>
+        {%- if product.compare_at_price > product.price -%}
+          <span class="deal-compare-price flash-compare-price">{{ product.compare_at_price | money }}</span>
+        {%- endif -%}
+      {%- endif -%}
+    </div>
+
+    {%- if dollar_savings > 0 -%}
+      <span class="deal-savings-pill {% if type == 'hvd' %}hvd-savings-pill{% else %}flash-savings-pill{% endif %}">
+        Ahorras {{ dollar_savings | money }}
+      </span>
+    {%- endif -%}
+
+    {%- if product.available -%}
+      <form method="post" action="{{ routes.cart_add_url }}" class="deal-form">
+        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+        <button
+          type="submit"
+          class="deal-btn {% if type == 'hvd' %}deal-btn--hvd hvd-btn{% else %}deal-btn--flash flash-card-btn{% endif %}"
+        >
+          {%- if type == 'flash' -%}
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+            </svg>
+            Comprar Oferta
+          {%- else -%}
+            Añadir al Carrito
+          {%- endif -%}
+        </button>
+      </form>
+    {%- else -%}
+      <button
+        type="button"
+        class="deal-btn {% if type == 'hvd' %}deal-btn--hvd hvd-btn{% else %}deal-btn--flash flash-card-btn{% endif %}"
+        disabled
+      >
+        Agotado
+      </button>
+    {%- endif -%}
+  </div>
+</div>

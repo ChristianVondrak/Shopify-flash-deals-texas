@@ -220,10 +220,13 @@
                 <path d="M10 22h4"></path>
                 <path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"></path>
               </svg>
-            {%- elsif icon_type == 'electrical' or forloop.index == 2 and icon_type == 'auto' -%}
-              <!-- Material Eléctrico / Rayo -->
+            {%- elsif icon_type == 'appliances' or icon_type == 'electrical' or forloop.index == 2 and icon_type == 'auto' -%}
+              <!-- Electrodomésticos -->
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+                <rect x="4" y="2" width="16" height="20" rx="2"></rect>
+                <line x1="4" y1="10" x2="20" y2="10"></line>
+                <line x1="15" y1="6" x2="15.01" y2="6"></line>
+                <line x1="15" y1="14" x2="15.01" y2="14"></line>
               </svg>
             {%- elsif icon_type == 'tools' or forloop.index == 3 and icon_type == 'auto' -%}
               <!-- Herramientas / Llave -->
@@ -334,6 +337,7 @@
           "options": [
             { "value": "auto", "label": "Automático según orden" },
             { "value": "lighting", "label": "Iluminación / Foco" },
+            { "value": "appliances", "label": "Electrodomésticos / Hogar" },
             { "value": "electrical", "label": "Material Eléctrico / Rayo" },
             { "value": "tools", "label": "Herramientas Pro / Llave" },
             { "value": "smart_home", "label": "Hogar Inteligente / Casa" },
@@ -376,9 +380,9 @@
         {
           "type": "category",
           "settings": {
-            "title": "Material Eléctrico",
-            "subtitle": "Cables & Conectores",
-            "icon": "electrical"
+            "title": "Electrodomésticos",
+            "subtitle": "Hogar & Cocina",
+            "icon": "appliances"
           }
         },
         {

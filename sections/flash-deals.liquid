@@ -144,6 +144,9 @@
     background: #ffffff;
     border-radius: 14px;
     overflow: hidden;
+    display: block;
+    cursor: pointer;
+    text-decoration: none;
   }
 
   .flash-card-media img {
@@ -386,14 +389,14 @@
             {%- assign dollar_savings = product.compare_at_price | minus: product.price -%}
 
             <div class="flash-card">
-              <div class="flash-card-media">
+              <a href="{{ product.url }}" class="flash-card-media" aria-label="{{ product.title | escape }}">
                 <span class="flash-discount-badge">-{{ savings }}%</span>
                 {%- if product.featured_image != blank -%}
                   <img src="{{ product.featured_image | image_url: width: 600 }}" alt="{{ product.title | escape }}" loading="lazy" width="600" height="600">
                 {%- else -%}
                   <img src="{{ 'card-screwdriver.jpg' | asset_url }}" alt="{{ product.title | escape }}" loading="lazy" width="600" height="600">
                 {%- endif -%}
-              </div>
+              </a>
               <div class="flash-card-content">
                 <a href="{{ product.url }}" class="flash-card-title">{{ product.title }}</a>
                 <div class="flash-price-row">
@@ -429,12 +432,12 @@
         {%- assign demo_imgs = "card-screwdriver.jpg,card-smartcamera.jpg,card-flashlight.jpg,card-screwdriver.jpg" | split: "," -%}
         {%- for i in (0..3) -%}
           <div class="flash-card">
-            <div class="flash-card-media">
+            <a href="{{ section.settings.collection.url | default: '/collections/all' }}" class="flash-card-media" aria-label="{{ demo_items[i] | escape }}">
               <span class="flash-discount-badge">{{ demo_pcts[i] }}</span>
               <img src="{{ demo_imgs[i] | asset_url }}" alt="{{ demo_items[i] }}" loading="lazy" width="600" height="600">
-            </div>
+            </a>
             <div class="flash-card-content">
-              <span class="flash-card-title">{{ demo_items[i] }}</span>
+              <a href="{{ section.settings.collection.url | default: '/collections/all' }}" class="flash-card-title">{{ demo_items[i] }}</a>
               <div class="flash-price-row">
                 <span class="flash-sale-price">{{ demo_prices[i] }}</span>
                 <span class="flash-compare-price">{{ demo_compare[i] }}</span>
