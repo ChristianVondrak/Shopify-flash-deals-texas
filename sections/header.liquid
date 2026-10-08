@@ -205,7 +205,17 @@
             }}
           </div>
         {%- else -%}
-          <span class="h2">{{ shop.name }}</span>
+          <div class="header__heading-logo-wrapper">
+            <img
+              src="{{ 'logo.png' | asset_url }}"
+              alt="{{ shop.name | escape }}"
+              class="header__heading-logo motion-reduce"
+              width="{{ settings.logo_width | default: 46 }}"
+              height="{{ settings.logo_width | default: 46 }}"
+              style="max-width: {{ settings.logo_width | default: 46 }}px; max-height: 46px; width: auto; height: auto;"
+              loading="eager"
+            >
+          </div>
         {%- endif -%}
       </a>
       {%- if request.page_type == 'index' -%}
@@ -248,7 +258,17 @@
             }}
           </div>
         {%- else -%}
-          <span class="h2">{{ shop.name }}</span>
+          <div class="header__heading-logo-wrapper">
+            <img
+              src="{{ 'logo.png' | asset_url }}"
+              alt="{{ shop.name | escape }}"
+              class="header__heading-logo"
+              width="{{ settings.logo_width | default: 46 }}"
+              height="{{ settings.logo_width | default: 46 }}"
+              style="max-width: {{ settings.logo_width | default: 46 }}px; max-height: 46px; width: auto; height: auto;"
+              loading="eager"
+            >
+          </div>
         {%- endif -%}
       </a>
       {%- if request.page_type == 'index' -%}
@@ -465,6 +485,8 @@
     "name": {{ shop.name | json }},
     {% if settings.logo %}
       "logo": {{ settings.logo | image_url: width: 500 | prepend: "https:" | json }},
+    {% else %}
+      "logo": {{ 'logo.png' | asset_url | prepend: "https:" | json }},
     {% endif %}
     "sameAs": [
       {{ settings.social_twitter_link | json }},

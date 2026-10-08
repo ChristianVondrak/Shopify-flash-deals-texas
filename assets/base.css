@@ -2468,11 +2468,14 @@ input[type='checkbox'] {
 .header__heading-logo {
   height: auto;
   max-width: 100%;
+  max-height: 48px;
+  width: auto;
+  object-fit: contain;
 }
 
 .header__heading-logo-wrapper {
-  width: 100%;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   transition: width 0.3s cubic-bezier(0.52, 0, 0.61, 0.99);
 }
 
