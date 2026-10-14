@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "flash_hero": {
@@ -9,16 +18,13 @@
         "cta_primary_label": "⚡ View Flash Deals",
         "cta_secondary_label": "High Value +$60",
         "featured_product": "dewalt-taladro",
-        "image_mode": "auto",
         "card_label": "Deal of the Day",
         "card_discount": "-42%",
         "card_price": "$134.50",
         "card_compare": "$299.00",
-        "hero_image": "shopify:\/\/shop_images\/image_e39a4c31-7c96-43b7-a0c4-b0f7c02d34ff.jpg",
         "bg_color": "#ffffff",
         "heading_color": "#0f172a",
         "subtext_color": "#475569",
-        "overlay_opacity": 20,
         "padding_top": 40,
         "padding_bottom": 40
       }
