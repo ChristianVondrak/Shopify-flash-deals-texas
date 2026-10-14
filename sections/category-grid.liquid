@@ -207,8 +207,8 @@
       {%- for block in section.blocks -%}
         {%- assign collection = collections[block.settings.collection] -%}
         {%- assign card_url = block.settings.custom_url | default: collection.url | default: '/collections/all' -%}
-        {%- assign card_title = block.settings.title | default: collection.title | default: 'Categoría' -%}
-        {%- assign card_tag = block.settings.subtitle | default: 'Ver catálogo' -%}
+        {%- assign card_title = block.settings.title | default: collection.title | default: 'Category' -%}
+        {%- assign card_tag = block.settings.subtitle | default: 'View catalog' -%}
         {%- assign icon_type = block.settings.icon | default: 'auto' -%}
 
         <a href="{{ card_url }}" class="category-slim-card" {{ block.shopify_attributes }}>
@@ -267,36 +267,36 @@
 
 {% schema %}
 {
-  "name": "Comprar por Categoría",
+  "name": "Shop by Category",
   "settings": [
     {
       "type": "text",
       "id": "heading",
-      "label": "Título",
-      "default": "Explora por Especialidad"
+      "label": "Heading",
+      "default": "Shop by Specialty"
     },
     {
       "type": "text",
       "id": "subheading",
-      "label": "Subtítulo",
-      "default": "Suministros y componentes seleccionados para tu hogar o taller"
+      "label": "Subheading",
+      "default": "Curated supplies and components for your home, workshop, or project"
     },
     {
       "type": "color",
       "id": "bg_color",
-      "label": "Fondo de la Sección",
+      "label": "Section Background",
       "default": "#f8fafc"
     },
     {
       "type": "color",
       "id": "heading_color",
-      "label": "Color del Título",
+      "label": "Heading Color",
       "default": "#0f172a"
     },
     {
       "type": "color",
       "id": "subheading_color",
-      "label": "Color del Subtítulo",
+      "label": "Subheading Color",
       "default": "#475569"
     },
     {
@@ -306,7 +306,7 @@
       "max": 80,
       "step": 5,
       "unit": "px",
-      "label": "Espaciado Superior",
+      "label": "Padding Top",
       "default": 30
     },
     {
@@ -316,88 +316,88 @@
       "max": 80,
       "step": 5,
       "unit": "px",
-      "label": "Espaciado Inferior",
+      "label": "Padding Bottom",
       "default": 30
     }
   ],
   "blocks": [
     {
       "type": "category",
-      "name": "Categoría",
+      "name": "Category",
       "settings": [
         {
           "type": "collection",
           "id": "collection",
-          "label": "Colección de Shopify"
+          "label": "Shopify Collection"
         },
         {
           "type": "select",
           "id": "icon",
-          "label": "Icono Minimalista",
+          "label": "Minimalist Icon",
           "options": [
-            { "value": "auto", "label": "Automático según orden" },
-            { "value": "lighting", "label": "Iluminación / Foco" },
-            { "value": "appliances", "label": "Electrodomésticos / Hogar" },
-            { "value": "electrical", "label": "Material Eléctrico / Rayo" },
-            { "value": "tools", "label": "Herramientas Pro / Llave" },
-            { "value": "smart_home", "label": "Hogar Inteligente / Casa" },
-            { "value": "box", "label": "Lote / Caja" }
+            { "value": "auto", "label": "Auto by index" },
+            { "value": "lighting", "label": "Lighting / Bulb" },
+            { "value": "appliances", "label": "Appliances / Home" },
+            { "value": "electrical", "label": "Electrical / Bolt" },
+            { "value": "tools", "label": "Pro Tools / Wrench" },
+            { "value": "smart_home", "label": "Smart Home / House" },
+            { "value": "box", "label": "Lot / Box" }
           ],
           "default": "auto"
         },
         {
           "type": "text",
           "id": "title",
-          "label": "Título de la Categoría",
-          "default": "Iluminación LED"
+          "label": "Category Title",
+          "default": "LED Lighting"
         },
         {
           "type": "text",
           "id": "subtitle",
-          "label": "Subtítulo o Etiqueta",
-          "default": "+45 Productos"
+          "label": "Subtitle or Badge",
+          "default": "+45 Products"
         },
         {
           "type": "url",
           "id": "custom_url",
-          "label": "Enlace Personalizado (Opcional)"
+          "label": "Custom URL (Optional)"
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "Comprar por Categoría",
+      "name": "Shop by Category",
       "blocks": [
         {
           "type": "category",
           "settings": {
-            "title": "Iluminación & Lámparas",
-            "subtitle": "+45 Productos",
+            "title": "Lighting & Lamps",
+            "subtitle": "+45 Products",
             "icon": "lighting"
           }
         },
         {
           "type": "category",
           "settings": {
-            "title": "Electrodomésticos",
-            "subtitle": "Hogar & Cocina",
+            "title": "Home Appliances",
+            "subtitle": "Home & Kitchen",
             "icon": "appliances"
           }
         },
         {
           "type": "category",
           "settings": {
-            "title": "Herramientas Pro",
-            "subtitle": "Inalámbricas & Manuales",
+            "title": "Pro Tools",
+            "subtitle": "Cordless & Hand Tools",
             "icon": "tools"
           }
         },
         {
           "type": "category",
           "settings": {
-            "title": "Hogar Inteligente",
-            "subtitle": "Automatización & Confort",
+            "title": "Smart Home",
+            "subtitle": "Automation & Comfort",
             "icon": "smart_home"
           }
         }

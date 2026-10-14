@@ -321,16 +321,16 @@
                   <span class="hvd-sale-price">{{ product.price | money }}</span>
                 </div>
                 {%- if dollar_savings > 0 -%}
-                  <span class="hvd-savings-pill">Ahorras {{ dollar_savings | money }}</span>
+                  <span class="hvd-savings-pill">Save {{ dollar_savings | money }}</span>
                 {%- endif -%}
 
                 {%- if product.available -%}
                   <form method="post" action="{{ routes.cart_add_url }}">
                     <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-                    <button type="submit" class="hvd-btn">Añadir al Carrito</button>
+                    <button type="submit" class="hvd-btn">Add to Cart</button>
                   </form>
                 {%- else -%}
-                  <button type="button" class="hvd-btn" disabled style="opacity:0.45;cursor:not-allowed;">Agotado</button>
+                  <button type="button" class="hvd-btn" disabled style="opacity:0.45;cursor:not-allowed;">Sold Out</button>
                 {%- endif -%}
               </div>
             </div>
@@ -338,10 +338,10 @@
         {%- endfor -%}
       {%- endif -%}
 
-      {%- comment -%} Rellenar ranuras restantes si hay menos productos que los solicitados para mantener la grilla perfecta {%- endcomment -%}
+      {%- comment -%} Fill remaining slots if fewer products than requested to keep grid aligned {%- endcomment -%}
       {%- assign remaining_slots = section.settings.products_to_show | minus: products_rendered -%}
       {%- if remaining_slots > 0 and section.settings.show_demo_placeholders -%}
-        {%- assign demo_items = "Generador Inverter Portátil 2500W Silencioso,Kit Taladro Percutor Pro 20V Max + Baterías,Hidrolavadora Industrial Ultra-Pro 3000 PSI,Compresor Portátil de Alta Potencia 6 Gal" | split: "," -%}
+        {%- assign demo_items = "2500W Ultra-Quiet Portable Inverter Generator,Pro 20V Max Hammer Drill Kit + Batteries,Industrial 3000 PSI Pressure Washer,6-Gallon High-Performance Portable Air Compressor" | split: "," -%}
         {%- assign demo_prices = "$189.00,$129.00,$219.00,$149.00" | split: "," -%}
         {%- assign demo_compare = "$329.00,$249.00,$449.00,$299.00" | split: "," -%}
         {%- assign demo_savings = "$140.00,$120.00,$230.00,$150.00" | split: "," -%}
@@ -364,16 +364,16 @@
                 <span class="hvd-compare-price">{{ demo_compare[mod_i] }}</span>
                 <span class="hvd-sale-price">{{ demo_prices[mod_i] }}</span>
               </div>
-              <span class="hvd-savings-pill">Ahorras {{ demo_savings[mod_i] }}</span>
+              <span class="hvd-savings-pill">Save {{ demo_savings[mod_i] }}</span>
 
-              <button type="button" class="hvd-btn">Añadir al Carrito</button>
+              <button type="button" class="hvd-btn">Add to Cart</button>
             </div>
           </div>
         {%- endfor -%}
       {%- elsif products_rendered == 0 and section.settings.show_demo_placeholders == false -%}
         <div class="hvd-empty">
-          <p style="font-weight:700;font-size:1rem;color:#0f172a;margin:0 0 0.4rem;">Próximos Lotes de Alto Valor</p>
-          <p style="font-size:0.85rem;margin:0;">Agrega productos ≥ $60 a la colección seleccionada.</p>
+          <p style="font-weight:700;font-size:1rem;color:#0f172a;margin:0 0 0.4rem;">Upcoming High-Value Lots</p>
+          <p style="font-size:0.85rem;margin:0;">Add products ≥ $60 to the selected collection.</p>
         </div>
       {%- endif -%}
     </div>
@@ -381,7 +381,7 @@
     {%- if section.settings.show_view_all -%}
       <div class="hvd-footer">
         <a href="{{ section.settings.collection.url | default: '/collections/all' }}" class="hvd-view-all">
-          Ver Catálogo Completo
+          View Full Catalog
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
         </a>
       </div>
@@ -391,22 +391,22 @@
 
 {% schema %}
 {
-  "name": "Lotes de Alto Valor",
+  "name": "High-Value Lots",
   "settings": [
-    { "type": "text", "id": "heading", "label": "Título Principal", "default": "OFERTAS DE ALTO VALOR & LOTES EXCLUSIVOS" },
-    { "type": "text", "id": "subheading", "label": "Subtítulo", "default": "Equipos de alto rendimiento con precio mayorista garantizado (≥ $60)." },
-    { "type": "collection", "id": "collection", "label": "Colección de Alto Valor (≥ $60)" },
-    { "type": "checkbox", "id": "filter_min_price", "label": "Filtrar solo productos ≥ $60", "default": false },
-    { "type": "checkbox", "id": "show_demo_placeholders", "label": "Mostrar demos si la colección está vacía", "default": true },
-    { "type": "range", "id": "products_to_show", "min": 2, "max": 12, "step": 2, "label": "Cantidad de productos", "default": 4 },
-    { "type": "checkbox", "id": "show_view_all", "label": "Mostrar 'Ver Catálogo Completo'", "default": true },
-    { "type": "header", "content": "Colores" },
-    { "type": "color", "id": "bg_color", "label": "Fondo de la Sección", "default": "#f8fafc" },
-    { "type": "color", "id": "heading_color", "label": "Color del Título", "default": "#0f172a" },
-    { "type": "color", "id": "subheading_color", "label": "Color del Subtítulo", "default": "#475569" },
-    { "type": "range", "id": "padding_top", "min": 20, "max": 100, "step": 5, "unit": "px", "label": "Espaciado Superior", "default": 60 },
-    { "type": "range", "id": "padding_bottom", "min": 20, "max": 100, "step": 5, "unit": "px", "label": "Espaciado Inferior", "default": 60 }
+    { "type": "text", "id": "heading", "label": "Main Heading", "default": "HIGH-VALUE DEALS & EXCLUSIVE LOTS" },
+    { "type": "text", "id": "subheading", "label": "Subheading", "default": "High-performance equipment with guaranteed wholesale pricing (≥ $60)." },
+    { "type": "collection", "id": "collection", "label": "High-Value Collection (≥ $60)" },
+    { "type": "checkbox", "id": "filter_min_price", "label": "Filter only products ≥ $60", "default": false },
+    { "type": "checkbox", "id": "show_demo_placeholders", "label": "Show demo placeholders if empty", "default": true },
+    { "type": "range", "id": "products_to_show", "min": 2, "max": 12, "step": 2, "label": "Products to show", "default": 4 },
+    { "type": "checkbox", "id": "show_view_all", "label": "Show 'View Full Catalog'", "default": true },
+    { "type": "header", "content": "Colors" },
+    { "type": "color", "id": "bg_color", "label": "Background", "default": "#f8fafc" },
+    { "type": "color", "id": "heading_color", "label": "Heading Color", "default": "#0f172a" },
+    { "type": "color", "id": "subheading_color", "label": "Subheading Color", "default": "#475569" },
+    { "type": "range", "id": "padding_top", "min": 20, "max": 100, "step": 5, "unit": "px", "label": "Padding Top", "default": 60 },
+    { "type": "range", "id": "padding_bottom", "min": 20, "max": 100, "step": 5, "unit": "px", "label": "Padding Bottom", "default": 60 }
   ],
-  "presets": [{ "name": "Lotes de Alto Valor" }]
+  "presets": [{ "name": "High-Value Deals & Lots" }]
 }
 {% endschema %}

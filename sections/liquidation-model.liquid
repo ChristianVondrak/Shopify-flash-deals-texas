@@ -99,7 +99,7 @@
   }
 {%- endstyle -%}
 
-<section class="liquidation-model-{{ section.id }}" aria-label="Modelo de Liquidación">
+<section class="liquidation-model-{{ section.id }}" aria-label="Liquidation Model">
   <div class="liquidation-model-container">
     <div class="liquidation-model-header">
       <h2 class="liquidation-model-heading">{{ section.settings.heading }}</h2>
@@ -112,7 +112,7 @@
       {%- for block in section.blocks -%}
         <div class="liquidation-step-card" {{ block.shopify_attributes }}>
           <div class="liquidation-step-number">
-            0{{ forloop.index }} / FASE
+            0{{ forloop.index }} / PHASE
           </div>
           <h3 class="liquidation-step-title">{{ block.settings.title }}</h3>
           <p class="liquidation-step-desc">{{ block.settings.description }}</p>
@@ -124,36 +124,36 @@
 
 {% schema %}
 {
-  "name": "Modelo de Liquidación",
+  "name": "Liquidation Model",
   "settings": [
     {
       "type": "text",
       "id": "heading",
-      "label": "Título Principal",
-      "default": "¿Por qué nuestros precios son de liquidación real?"
+      "label": "Main Heading",
+      "default": "Why are our prices true liquidation?"
     },
     {
       "type": "text",
       "id": "subheading",
-      "label": "Subtítulo",
-      "default": "Adquirimos lotes cerrados de contratistas, distribuidores y sobrestock de fábrica en Texas para trasladar el descuento directamente a ti."
+      "label": "Subheading",
+      "default": "We acquire closed wholesale lots from contractors, distributors, and factory overstock in Texas to pass the discount directly to you."
     },
     {
       "type": "color",
       "id": "bg_color",
-      "label": "Fondo de la Sección",
+      "label": "Section Background",
       "default": "#16181d"
     },
     {
       "type": "color",
       "id": "heading_color",
-      "label": "Color del Título",
+      "label": "Heading Color",
       "default": "#f3f4f6"
     },
     {
       "type": "color",
       "id": "subheading_color",
-      "label": "Color del Subtítulo",
+      "label": "Subheading Color",
       "default": "#9ca3af"
     },
     {
@@ -163,7 +163,7 @@
       "max": 100,
       "step": 5,
       "unit": "px",
-      "label": "Espaciado Superior",
+      "label": "Padding Top",
       "default": 60
     },
     {
@@ -173,53 +173,53 @@
       "max": 100,
       "step": 5,
       "unit": "px",
-      "label": "Espaciado Inferior",
+      "label": "Padding Bottom",
       "default": 60
     }
   ],
   "blocks": [
     {
       "type": "step",
-      "name": "Paso del Modelo",
+      "name": "Model Step",
       "settings": [
         {
           "type": "text",
           "id": "title",
-          "label": "Título",
-          "default": "Adquisición de Lotes por Excedentes"
+          "label": "Title",
+          "default": "Direct Surplus Lot Acquisition"
         },
         {
           "type": "textarea",
           "id": "description",
-          "label": "Descripción",
-          "default": "Compramos directamente sobrestock de fábrica y cancelaciones de obra de distribuidores autorizados en Texas."
+          "label": "Description",
+          "default": "We buy directly factory overstock and job cancellations from authorized distributors in Texas."
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "Modelo de Liquidación",
+      "name": "Liquidation Model",
       "blocks": [
         {
           "type": "step",
           "settings": {
-            "title": "Adquisición de Lotes Directos",
-            "description": "Monitoreamos y compramos lotes cerrados de sobrestock de fábrica, cierres de proyectos y cancelaciones comerciales en el área de Texas."
+            "title": "Direct Lot Acquisition",
+            "description": "We monitor and acquire closed factory overstock lots, job cancellations, and commercial surplus in Texas."
           }
         },
         {
           "type": "step",
           "settings": {
-            "title": "Inspección Técnica en Bodega",
-            "description": "Cada producto se recibe en nuestro almacén de Houston, TX, donde verificamos sellos de fábrica, empaques originales y especificaciones antes de su publicación."
+            "title": "Technical Warehouse Inspection",
+            "description": "Each product is received at our Houston, TX warehouse, where factory seals, original packaging, and specifications are verified before listing."
           }
         },
         {
           "type": "step",
           "settings": {
-            "title": "Despacho & Entrega",
-            "description": "Sin intermediarios ni costos de retail tradicional. Preparamos y despachamos directo desde bodega con entrega estimada de aproximadamente 7 días hábiles y garantía de 5 días hábiles luego de haber llegado el paquete a su destino."
+            "title": "Dispatch & Delivery",
+            "description": "No middlemen or traditional retail markups. We prepare and ship directly from our warehouse with estimated delivery in ~7 business days and a 5-business-day warranty upon delivery."
           }
         }
       ]

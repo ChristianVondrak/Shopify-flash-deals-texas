@@ -54,7 +54,7 @@
   }
 {%- endstyle -%}
 
-<section class="operational-ticker-{{ section.id }}" aria-label="Información Operativa">
+<section class="operational-ticker-{{ section.id }}" aria-label="Operational Updates">
   <div class="operational-ticker-track">
     <!-- Set 1 -->
     <div class="operational-ticker-group">
@@ -79,30 +79,30 @@
 
 {% schema %}
 {
-  "name": "Ticker Operativo",
+  "name": "Operational Ticker",
   "settings": [
     {
       "type": "color",
       "id": "bg_color",
-      "label": "Color de Fondo",
+      "label": "Background Color",
       "default": "#0e1014"
     },
     {
       "type": "color",
       "id": "border_color",
-      "label": "Color del Borde",
+      "label": "Border Color",
       "default": "#232730"
     },
     {
       "type": "color",
       "id": "text_color",
-      "label": "Color del Texto",
+      "label": "Text Color",
       "default": "#d1d5db"
     },
     {
       "type": "color",
       "id": "accent_color",
-      "label": "Color del Separador",
+      "label": "Separator Color",
       "default": "#f59e0b"
     },
     {
@@ -112,34 +112,34 @@
       "max": 60,
       "step": 5,
       "unit": "s",
-      "label": "Velocidad de Desplazamiento",
+      "label": "Scroll Speed",
       "default": 35
     }
   ],
   "blocks": [
     {
       "type": "item",
-      "name": "Elemento",
+      "name": "Item",
       "settings": [
         {
           "type": "text",
           "id": "text",
-          "label": "Texto Informativo",
-          "default": "ALMACÉN CENTRAL: HOUSTON, TX"
+          "label": "Ticker Text",
+          "default": "CENTRAL WAREHOUSE: HOUSTON, TX"
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "Ticker Operativo",
+      "name": "Operational Ticker",
       "blocks": [
-        { "type": "item", "settings": { "text": "ALMACÉN CENTRAL: HOUSTON, TX" } },
-        { "type": "item", "settings": { "text": "DESPACHO EN 24 HORAS HÁBILES" } },
-        { "type": "item", "settings": { "text": "PRODUCTOS 100% NUEVOS EN CAJA SELLADA" } },
-        { "type": "item", "settings": { "text": "GARANTÍA DIRECTA DE BODEGA" } },
-        { "type": "item", "settings": { "text": "INVENTARIO DIRECTO DE DISTRIBUIDOR" } },
-        { "type": "item", "settings": { "text": "ENVÍOS DIRECTOS A TODO TEXAS" } }
+        { "type": "item", "settings": { "text": "CENTRAL WAREHOUSE: HOUSTON, TX" } },
+        { "type": "item", "settings": { "text": "DISPATCHED WITHIN 24 BUSINESS HOURS" } },
+        { "type": "item", "settings": { "text": "100% BRAND NEW FACTORY-SEALED PRODUCTS" } },
+        { "type": "item", "settings": { "text": "DIRECT WAREHOUSE WARRANTY" } },
+        { "type": "item", "settings": { "text": "DIRECT DISTRIBUTOR OVERSTOCK INVENTORY" } },
+        { "type": "item", "settings": { "text": "DIRECT SHIPPING ACROSS TEXAS" } }
       ]
     }
   ]

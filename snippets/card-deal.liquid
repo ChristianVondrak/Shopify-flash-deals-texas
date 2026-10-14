@@ -82,7 +82,7 @@
 
     {%- if dollar_savings > 0 -%}
       <span class="deal-savings-pill {% if type == 'hvd' %}hvd-savings-pill{% else %}flash-savings-pill{% endif %}">
-        Ahorras {{ dollar_savings | money }}
+        Save {{ dollar_savings | money }}
       </span>
     {%- endif -%}
 
@@ -97,9 +97,9 @@
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
             </svg>
-            Comprar Oferta
+            Buy Deal
           {%- else -%}
-            Añadir al Carrito
+            Add to Cart
           {%- endif -%}
         </button>
       </form>
@@ -109,7 +109,7 @@
         class="deal-btn {% if type == 'hvd' %}deal-btn--hvd hvd-btn{% else %}deal-btn--flash flash-card-btn{% endif %}"
         disabled
       >
-        Agotado
+        Sold Out
       </button>
     {%- endif -%}
   </div>

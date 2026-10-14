@@ -390,15 +390,15 @@
       <div class="fdtx-hero-trust">
         <span class="fdtx-trust-item">
           <svg class="fdtx-trust-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          100% Nuevo &middot; Sellado
+          100% Brand New &middot; Sealed
         </span>
         <span class="fdtx-trust-item">
           <svg class="fdtx-trust-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
-          Entrega ~7 días hábiles
+          Est. Delivery ~7 Business Days
         </span>
         <span class="fdtx-trust-item">
           <svg class="fdtx-trust-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-          Garantía 5 días hábiles
+          5-Day Business Warranty
         </span>
       </div>
     </div>
@@ -434,11 +434,11 @@
     {%- endif -%}
 
     <div class="fdtx-hero-visual">
-      <a href="{{ hero_url }}" class="fdtx-hero-card" title="{{ hero_title | default: 'Ver Oferta' | escape }}">
+      <a href="{{ hero_url }}" class="fdtx-hero-card" title="{{ hero_title | default: 'View Deal' | escape }}">
 
         <div class="fdtx-hero-card-header">
           <span class="fdtx-hero-card-discount">{{ hero_discount }}</span>
-          <span class="fdtx-hero-card-discount-label">DESCUENTO</span>
+          <span class="fdtx-hero-card-discount-label">OFF</span>
         </div>
 
         <div class="fdtx-hero-card-body">
@@ -482,25 +482,25 @@
   "name": "Hero Flash Deals",
   "tag": "section",
   "settings": [
-    { "type": "header", "content": "Contenido Principal" },
-    { "type": "text", "id": "heading_accent", "label": "Titulo acento (ambar-rojo)", "default": "Flash Deals" },
-    { "type": "text", "id": "heading_rest", "label": "Resto del titulo", "default": "Texas" },
-    { "type": "textarea", "id": "subtext", "label": "Subtexto", "default": "Precios de liquidacion mayorista en herramientas, iluminacion y electricidad. Inventario directo desde Houston, TX." },
-    { "type": "header", "content": "Botones CTA" },
-    { "type": "text", "id": "cta_primary_label", "label": "CTA Primario (texto)", "default": "Ver Ofertas Flash" },
-    { "type": "url", "id": "cta_primary_url", "label": "CTA Primario (enlace)" },
-    { "type": "text", "id": "cta_secondary_label", "label": "CTA Secundario (texto)", "default": "Alto Valor +$60" },
-    { "type": "url", "id": "cta_secondary_url", "label": "CTA Secundario (enlace)" },
-    { "type": "header", "content": "Producto Destacado del Hero" },
-    { "type": "product", "id": "featured_product", "label": "Seleccionar Producto", "info": "La foto, precios, descuento y enlace se conectan automaticamente." },
-    { "type": "image_picker", "id": "custom_image", "label": "Imagen personalizada del Hero", "info": "Opcional: Sube una foto para reemplazar la imagen del producto en el hero." },
-    { "type": "header", "content": "Tarjeta de Oferta" },
-    { "type": "checkbox", "id": "show_card_title", "label": "Mostrar título del producto en la tarjeta", "default": false },
-    { "type": "text", "id": "card_label", "label": "Etiqueta superior", "default": "Oferta del Dia" },
-    { "type": "paragraph", "content": "Campos de respaldo si no hay producto seleccionado:" },
-    { "type": "text", "id": "card_discount", "label": "Descuento manual", "default": "-42%" },
-    { "type": "text", "id": "card_price", "label": "Precio oferta manual", "default": "$134.50" },
-    { "type": "text", "id": "card_compare", "label": "Precio tachado manual", "default": "$299.00" },
+    { "type": "header", "content": "Main Content" },
+    { "type": "text", "id": "heading_accent", "label": "Heading Accent", "default": "Flash Deals" },
+    { "type": "text", "id": "heading_rest", "label": "Heading Rest", "default": "Texas" },
+    { "type": "textarea", "id": "subtext", "label": "Subtext", "default": "Wholesale liquidation prices on tools, lighting, and electrical supplies. Direct inventory from Houston, TX." },
+    { "type": "header", "content": "CTA Buttons" },
+    { "type": "text", "id": "cta_primary_label", "label": "Primary CTA Label", "default": "View Flash Deals" },
+    { "type": "url", "id": "cta_primary_url", "label": "Primary CTA Link" },
+    { "type": "text", "id": "cta_secondary_label", "label": "Secondary CTA Label", "default": "High Value +$60" },
+    { "type": "url", "id": "cta_secondary_url", "label": "Secondary CTA Link" },
+    { "type": "header", "content": "Featured Hero Product" },
+    { "type": "product", "id": "featured_product", "label": "Select Product" },
+    { "type": "image_picker", "id": "custom_image", "label": "Custom Hero Image" },
+    { "type": "header", "content": "Deal Card" },
+    { "type": "checkbox", "id": "show_card_title", "label": "Show product title in card", "default": false },
+    { "type": "text", "id": "card_label", "label": "Top label", "default": "Deal of the Day" },
+    { "type": "paragraph", "content": "Fallback fields if no product is selected:" },
+    { "type": "text", "id": "card_discount", "label": "Manual discount", "default": "-42%" },
+    { "type": "text", "id": "card_price", "label": "Manual sale price", "default": "$134.50" },
+    { "type": "text", "id": "card_compare", "label": "Manual compare price", "default": "$299.00" },
     { "type": "header", "content": "Colores y Espaciado" },
     { "type": "color", "id": "bg_color", "label": "Color de fondo", "default": "#0f172a" },
     { "type": "color", "id": "heading_color", "label": "Color del titulo", "default": "#f1f5f9" },

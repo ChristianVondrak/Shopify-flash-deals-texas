@@ -8,14 +8,14 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Alertas de Liquidación & Nuevos Lotes",
+            "heading": "Liquidation Alerts & New Lots",
             "heading_size": "h1"
           }
         },
         "paragraph": {
           "type": "paragraph",
           "settings": {
-            "text": "<p>Suscríbete para recibir notificaciones inmediatas de lotes de liquidación antes de que se agoten.</p>"
+            "text": "<p>Subscribe to receive instant notifications of liquidation lots before they sell out.</p>"
           }
         },
         "email-form": {
@@ -42,21 +42,21 @@
           "type": "text",
           "settings": {
             "heading": "Flash Deals Texas",
-            "subtext": "<p>Venta de lotes de liquidación, excedentes de inventario y retornos directos en Texas. Calidad verificada y despacho inmediato desde Houston.</p>"
+            "subtext": "<p>Wholesale liquidation lots, inventory overstock, and closeouts in Texas. Verified quality and fast dispatch from Houston.</p>"
           }
         },
         "menu": {
           "type": "link_list",
           "settings": {
-            "heading": "Explorar Catálogo",
+            "heading": "Explore Catalog",
             "menu": "main-menu"
           }
         },
         "contact": {
           "type": "text",
           "settings": {
-            "heading": "Contacto & Soporte",
-            "subtext": "<p><strong>Teléfono:</strong> <a href=\"tel:+12817065323\">+1 (281) 706-5323</a><br><strong>Email:</strong> <a href=\"mailto:flashdealstexas@gmail.com\">flashdealstexas@gmail.com</a><br><strong>WhatsApp:</strong> <a href=\"https://wa.me/12817065323\" target=\"_blank\">+1 (281) 706-5323</a><br><strong>Almacén:</strong> Houston, Texas</p>"
+            "heading": "Contact & Support",
+            "subtext": "<p><strong>Phone:</strong> <a href=\"tel:+12817065323\">+1 (281) 706-5323</a><br><strong>Email:</strong> <a href=\"mailto:flashdealstexas@gmail.com\">flashdealstexas@gmail.com</a><br><strong>WhatsApp:</strong> <a href=\"https://wa.me/12817065323\" target=\"_blank\">+1 (281) 706-5323</a><br><strong>Warehouse:</strong> Houston, Texas</p>"
           }
         }
       },

@@ -404,7 +404,7 @@
                   <span class="flash-compare-price">{{ product.compare_at_price | money }}</span>
                 </div>
                 {%- if dollar_savings > 0 -%}
-                  <span class="flash-savings-pill">Ahorras {{ dollar_savings | money }}</span>
+                  <span class="flash-savings-pill">Save {{ dollar_savings | money }}</span>
                 {%- endif -%}
 
                 {%- if product.available -%}
@@ -412,19 +412,19 @@
                     <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
                     <button type="submit" class="flash-card-btn">
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-                      Comprar Oferta
+                      Buy Deal
                     </button>
                   </form>
                 {%- else -%}
-                  <button type="button" class="flash-card-btn" disabled style="opacity:0.45;cursor:not-allowed;">Agotado</button>
+                  <button type="button" class="flash-card-btn" disabled style="opacity:0.45;cursor:not-allowed;">Sold Out</button>
                 {%- endif -%}
               </div>
             </div>
           {%- endif -%}
         {%- endfor -%}
       {%- else -%}
-        {%- comment -%} Demo placeholders si no hay productos {%- endcomment -%}
-        {%- assign demo_items = "Set Destornilladores Magnéticos Pro 8 Piezas,Cámara de Seguridad WiFi 360° HD Visión Nocturna,Linterna Táctica Militar LED 5000 Lumens Recargable,Kit Multiuso de Precisión Taller & Bolsillo" | split: "," -%}
+        {%- comment -%} Demo placeholders if no products {%- endcomment -%}
+        {%- assign demo_items = "8-Piece Pro Magnetic Screwdriver Set,360° HD Night Vision WiFi Security Camera,5000 Lumens Rechargeable LED Tactical Flashlight,Precision Workshop & Pocket Multi-Tool Kit" | split: "," -%}
         {%- assign demo_prices = "$14.99,$19.99,$14.99,$16.99" | split: "," -%}
         {%- assign demo_compare = "$49.99,$59.99,$44.99,$49.99" | split: "," -%}
         {%- assign demo_savings = "$35.00,$40.00,$30.00,$33.00" | split: "," -%}
@@ -442,11 +442,11 @@
                 <span class="flash-sale-price">{{ demo_prices[i] }}</span>
                 <span class="flash-compare-price">{{ demo_compare[i] }}</span>
               </div>
-              <span class="flash-savings-pill">Ahorras {{ demo_savings[i] }}</span>
+              <span class="flash-savings-pill">Save {{ demo_savings[i] }}</span>
 
               <button type="button" class="flash-card-btn">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-                Comprar Oferta
+                Buy Deal
               </button>
             </div>
           </div>
@@ -457,7 +457,7 @@
     {%- if section.settings.show_view_all -%}
       <div class="flash-deals-footer-btn">
         <a href="{{ collection.url | default: '/collections/all' }}" class="flash-view-all-link">
-          Ver Todo el Catálogo
+          View All Deals
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
         </a>
       </div>
@@ -513,23 +513,23 @@
 
 {% schema %}
 {
-  "name": "Ofertas Flash",
+  "name": "Flash Deals",
   "settings": [
-    { "type": "text", "id": "heading", "label": "Título", "default": "OFERTAS IMPERDIBLES - POR TIEMPO LIMITADO" },
-    { "type": "text", "id": "subheading", "label": "Subtítulo", "default": "Descuentos agresivos en artículos de alta rotación por menos de $60." },
-    { "type": "collection", "id": "collection", "label": "Colección Flash (<$60)" },
-    { "type": "checkbox", "id": "filter_max_price", "label": "Filtrar solo productos < $60", "default": false },
-    { "type": "range", "id": "products_to_show", "min": 2, "max": 12, "step": 1, "label": "Cantidad de productos", "default": 4 },
-    { "type": "text", "id": "timer_label", "label": "Etiqueta del Temporizador", "default": "Termina en:" },
-    { "type": "range", "id": "timer_duration_hours", "min": 1, "max": 24, "step": 1, "unit": "h", "label": "Duración inicial del timer", "default": 8 },
-    { "type": "checkbox", "id": "show_view_all", "label": "Mostrar botón 'Ver Todo'", "default": true },
-    { "type": "header", "content": "Colores" },
-    { "type": "color", "id": "bg_color", "label": "Fondo", "default": "#ffffff" },
-    { "type": "color", "id": "heading_color", "label": "Color Título", "default": "#0f172a" },
-    { "type": "color", "id": "subheading_color", "label": "Color Subtítulo", "default": "#475569" },
-    { "type": "range", "id": "padding_top", "min": 20, "max": 100, "step": 5, "unit": "px", "label": "Espaciado Superior", "default": 60 },
-    { "type": "range", "id": "padding_bottom", "min": 20, "max": 100, "step": 5, "unit": "px", "label": "Espaciado Inferior", "default": 60 }
+    { "type": "text", "id": "heading", "label": "Heading", "default": "UNMISSABLE DEALS - LIMITED TIME ONLY" },
+    { "type": "text", "id": "subheading", "label": "Subheading", "default": "Aggressive discounts on fast-moving inventory under $60." },
+    { "type": "collection", "id": "collection", "label": "Flash Collection (<$60)" },
+    { "type": "checkbox", "id": "filter_max_price", "label": "Filter only products < $60", "default": false },
+    { "type": "range", "id": "products_to_show", "min": 2, "max": 12, "step": 1, "label": "Products to show", "default": 4 },
+    { "type": "text", "id": "timer_label", "label": "Timer Label", "default": "Ends in:" },
+    { "type": "range", "id": "timer_duration_hours", "min": 1, "max": 24, "step": 1, "unit": "h", "label": "Timer Duration (Hours)", "default": 8 },
+    { "type": "checkbox", "id": "show_view_all", "label": "Show 'View All' Button", "default": true },
+    { "type": "header", "content": "Colors" },
+    { "type": "color", "id": "bg_color", "label": "Background", "default": "#ffffff" },
+    { "type": "color", "id": "heading_color", "label": "Heading Color", "default": "#0f172a" },
+    { "type": "color", "id": "subheading_color", "label": "Subheading Color", "default": "#475569" },
+    { "type": "range", "id": "padding_top", "min": 20, "max": 100, "step": 5, "unit": "px", "label": "Padding Top", "default": 60 },
+    { "type": "range", "id": "padding_bottom", "min": 20, "max": 100, "step": 5, "unit": "px", "label": "Padding Bottom", "default": 60 }
   ],
-  "presets": [{ "name": "Ofertas Flash & Liquidación" }]
+  "presets": [{ "name": "Flash Deals & Liquidation" }]
 }
 {% endschema %}

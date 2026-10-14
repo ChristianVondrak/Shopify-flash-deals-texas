@@ -99,7 +99,7 @@
   }
 {%- endstyle -%}
 
-<section class="liquidation-faq-{{ section.id }}" aria-label="Preguntas Frecuentes">
+<section class="liquidation-faq-{{ section.id }}" aria-label="Frequently Asked Questions">
   <div class="liquidation-faq-container">
     <div class="liquidation-faq-header">
       <h2 class="liquidation-faq-heading">{{ section.settings.heading }}</h2>
@@ -128,19 +128,19 @@
 
 {% schema %}
 {
-  "name": "FAQ de Liquidaciones",
+  "name": "Liquidation FAQ",
   "settings": [
     {
       "type": "text",
       "id": "heading",
-      "label": "Título",
-      "default": "Preguntas Frecuentes sobre Liquidaciones"
+      "label": "Heading",
+      "default": "Frequently Asked Questions About Liquidations"
     },
     {
       "type": "text",
       "id": "subheading",
-      "label": "Subtítulo",
-      "default": "Todo lo que necesitas saber sobre procedencia, envíos en Texas y garantías."
+      "label": "Subheading",
+      "default": "Everything you need to know about provenance, Texas dispatch times, and warranties."
     },
     {
       "type": "color",
@@ -184,74 +184,74 @@
   "blocks": [
     {
       "type": "faq_item",
-      "name": "Pregunta / Respuesta",
+      "name": "Question / Answer",
       "settings": [
         {
           "type": "text",
           "id": "question",
-          "label": "Pregunta",
-          "default": "¿Los productos son nuevos o reacondicionados?"
+          "label": "Question",
+          "default": "Are items brand new or refurbished?"
         },
         {
           "type": "textarea",
           "id": "answer",
-          "label": "Respuesta",
-          "default": "Todos nuestros productos son 100% nuevos, en su empaque original de fábrica con sellos intactos. Provienen de sobrestock mayorista y cancelaciones de distribuidores, nunca de segunda mano."
+          "label": "Answer",
+          "default": "All our products are 100% brand new, sealed in original factory packaging with intact seals. They come from wholesale overstock and distributor cancellations, never second-hand."
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "FAQ de Liquidaciones",
+      "name": "Liquidation FAQ",
       "blocks": [
         {
           "type": "faq_item",
           "settings": {
-            "question": "¿Los artículos son 100% nuevos o reacondicionados?",
-            "answer": "Todos nuestros artículos son 100% nuevos, sellados en su empaque original de fábrica. Provienen de excedentes de obra y sobrestock de distribuidores mayoristas autorizados en Texas, nunca de productos usados o devueltos."
+            "question": "Are items 100% brand new or refurbished?",
+            "answer": "All items are 100% brand new, sealed in original factory packaging. They come from wholesale overstock and Texas project cancellations, never from customer returns or second-hand goods."
           }
         },
         {
           "type": "faq_item",
           "settings": {
-            "question": "¿Por qué los precios son tan bajos respecto al retail tradicional?",
-            "answer": "Compramos lotes cerrados por volumen a fabricantes y distribuidores que necesitan liberar espacio en almacén. Al despachar directamente desde nuestro centro en Houston sin sobrecostos de intermediarios ni locales comerciales lujosos, trasladamos el ahorro neto a nuestros clientes."
+            "question": "Why are prices so low compared to traditional retail?",
+            "answer": "We buy closed wholesale lots in bulk from distributors needing to quickly clear warehouse space. By selling online directly from our Houston facility without retail middleman chains, we pass the net savings directly to our customers."
           }
         },
         {
           "type": "faq_item",
           "settings": {
-            "question": "¿Cuánto tiempo tarda la entrega en Texas?",
-            "answer": "Los pedidos se procesan y despachan en un plazo de 24 horas hábiles desde Houston, TX. El tiempo estimado de entrega es de aproximadamente 7 días hábiles vía paquetería."
+            "question": "How long does shipping take in Texas?",
+            "answer": "Orders are processed and dispatched within 24 business hours from Houston, TX. Estimated delivery time is approximately 7 business days via courier."
           }
         },
         {
           "type": "faq_item",
           "settings": {
-            "question": "¿Qué garantía tienen los productos adquiridos?",
-            "answer": "Todos los productos cuentan con una garantía de 5 días hábiles a partir de haber reportado el caso y reenviado el artículo a nuestra bodega en Houston."
+            "question": "What warranty is included with purchased products?",
+            "answer": "All products include a 5-business-day warranty starting once the claim is filed and the item is returned to our Houston warehouse."
           }
         },
         {
           "type": "faq_item",
           "settings": {
-            "question": "¿Qué pasa si mi producto llega dañado?",
-            "answer": "Si el producto llega dañado durante el envío, contáctanos inmediatamente y envíanos fotografías del producto, el empaque y la etiqueta de envío. Evaluaremos el caso y te indicaremos los siguientes pasos."
+            "question": "What if my product arrives damaged?",
+            "answer": "If an item arrives damaged during transit, contact us immediately with photos of the product, packaging, and shipping label. We will review the case promptly and guide you through the next steps."
           }
         },
         {
           "type": "faq_item",
           "settings": {
-            "question": "¿Los productos pueden agotarse rápidamente?",
-            "answer": "Sí. La mercancía de liquidación suele estar disponible en cantidades limitadas. Algunos productos pueden no volver a estar disponibles una vez agotados."
+            "question": "Can products sell out quickly?",
+            "answer": "Yes. Liquidation inventory is available in strictly limited quantities. Once a lot is sold out, it may not be restocked."
           }
         },
         {
           "type": "faq_item",
           "settings": {
-            "question": "¿Cómo puedo contactar a Flash Deals Texas?",
-            "answer": "Puedes comunicarte con nosotros a través de nuestros canales de contacto disponibles en la página web. Estamos aquí para ayudarte con preguntas sobre productos, pedidos, envíos y compras."
+            "question": "How can I contact Flash Deals Texas?",
+            "answer": "You can reach us through any of our contact channels available on the website (phone, email, WhatsApp). We are here to help with questions regarding products, orders, and shipping."
           }
         }
       ]

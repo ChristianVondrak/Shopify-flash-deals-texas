@@ -163,7 +163,7 @@
       <div class="reviews-badge-summary">
         <span>★ 4.9 / 5</span>
         <span>•</span>
-        <span>Más de 1,400 Clientes Satisfechos</span>
+        <span>Over 1,400+ Satisfied Customers</span>
       </div>
       <h2 class="reviews-heading">{{ section.settings.heading }}</h2>
       {%- if section.settings.subheading != blank -%}
@@ -201,7 +201,7 @@
               <svg viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
               </svg>
-              Verificado
+              Verified
             </div>
           </div>
         </div>
@@ -212,36 +212,36 @@
 
 {% schema %}
 {
-  "name": "Reseñas de Clientes",
+  "name": "Customer Reviews",
   "settings": [
     {
       "type": "text",
       "id": "heading",
-      "label": "Título",
-      "default": "Clientes que Confían en Flash Deals"
+      "label": "Heading",
+      "default": "Customers Who Trust Flash Deals"
     },
     {
       "type": "text",
       "id": "subheading",
-      "label": "Subtítulo",
-      "default": "Opiniones reales sobre calidad, rapidez de entrega y precios sin competencia"
+      "label": "Subheading",
+      "default": "Real feedback on quality, delivery speed, and unbeatable prices"
     },
     {
       "type": "color",
       "id": "bg_color",
-      "label": "Fondo de la Sección",
+      "label": "Background",
       "default": "#ffffff"
     },
     {
       "type": "color",
       "id": "heading_color",
-      "label": "Color del Título",
+      "label": "Heading Color",
       "default": "#111827"
     },
     {
       "type": "color",
       "id": "subheading_color",
-      "label": "Color del Subtítulo",
+      "label": "Subheading Color",
       "default": "#6b7280"
     },
     {
@@ -251,7 +251,7 @@
       "max": 100,
       "step": 5,
       "unit": "px",
-      "label": "Espaciado Superior",
+      "label": "Padding Top",
       "default": 60
     },
     {
@@ -261,53 +261,53 @@
       "max": 100,
       "step": 5,
       "unit": "px",
-      "label": "Espaciado Inferior",
+      "label": "Padding Bottom",
       "default": 60
     }
   ],
   "blocks": [
     {
       "type": "review",
-      "name": "Reseña",
+      "name": "Review",
       "settings": [
         {
           "type": "text",
           "id": "author",
-          "label": "Nombre del Cliente",
-          "default": "Carlos M."
+          "label": "Author",
+          "default": "David R."
         },
         {
           "type": "text",
           "id": "location",
-          "label": "Ubicación",
+          "label": "Location",
           "default": "Houston, TX"
         },
         {
           "type": "textarea",
           "id": "text",
-          "label": "Comentario de la Reseña",
-          "default": "Excelente servicio. Pedí un set de bombillas LED y un destornillador en oferta flash; me llegó en aproximadamente 7 días hábiles a Houston y la calidad supera lo que esperaba por el precio."
+          "label": "Review Content",
+          "default": "Great service. Ordered a LED bulb pack and an electric screwdriver during a flash deal; it arrived in ~7 business days in Houston and the quality exceeded my expectations."
         },
         {
           "type": "text",
           "id": "product_tag",
-          "label": "Producto Comprado (Opcional)",
-          "default": "Compró: Pack Bombillas Vintage + Herramientas"
+          "label": "Purchased Item (Optional)",
+          "default": "Purchased: Vintage LED Pack + Tools"
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "Reseñas de Clientes",
+      "name": "Customer Reviews",
       "blocks": [
         {
           "type": "review",
           "settings": {
             "author": "David R.",
             "location": "Houston, TX",
-            "text": "Las ofertas flash son 100% reales. Compré un reflector solar LED con 40% de descuento y la potencia de iluminación es impresionante.",
-            "product_tag": "Compró: Reflector Solar LED 100W"
+            "text": "Flash deals are 100% genuine. Bought a solar LED floodlight at 40% off and the illumination output is stunning.",
+            "product_tag": "Purchased: 100W Solar LED Floodlight"
           }
         },
         {
@@ -315,17 +315,17 @@
           "settings": {
             "author": "Elena G.",
             "location": "San Antonio, TX",
-            "text": "Me encantó la atención y el empaque. Productos de electricidad bien protegidos y entrega rápida. Definitivamente volveré a comprar.",
-            "product_tag": "Compró: Termostato Digital + Cableado"
+            "text": "Loved the customer care and packaging. Electrical products well-protected and fast shipping. Will definitely buy again.",
+            "product_tag": "Purchased: Digital Thermostat + Wiring"
           }
         },
         {
           "type": "review",
           "settings": {
-            "author": "Martín S.",
+            "author": "Martin S.",
             "location": "Austin, TX",
-            "text": "Buscaba herramientas buenas para remodelar mi casa sin gastar una fortuna. Flash Deals tiene los mejores precios que he visto en Texas.",
-            "product_tag": "Compró: Destornillador Pro 20V"
+            "text": "Was looking for good tools for my home remodel without spending a fortune. Flash Deals has the best liquidation prices in Texas.",
+            "product_tag": "Purchased: 20V Pro Screwdriver"
           }
         }
       ]

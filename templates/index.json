@@ -5,12 +5,12 @@
       "settings": {
         "heading_accent": "Flash Deals",
         "heading_rest": "Texas",
-        "subtext": "Precios de liquidaci\u00f3n mayorista en herramientas, iluminaci\u00f3n y electricidad. Inventario directo desde Houston, TX.",
-        "cta_primary_label": "\u26a1 Ver Ofertas Flash",
-        "cta_secondary_label": "Alto Valor +$60",
+        "subtext": "Wholesale liquidation prices on tools, lighting, and electrical supplies. Direct inventory from Houston, TX.",
+        "cta_primary_label": "⚡ View Flash Deals",
+        "cta_secondary_label": "High Value +$60",
         "featured_product": "dewalt-taladro",
         "image_mode": "auto",
-        "card_label": "Oferta del D\u00eda",
+        "card_label": "Deal of the Day",
         "card_discount": "-42%",
         "card_price": "$134.50",
         "card_compare": "$299.00",
@@ -30,32 +30,32 @@
           "type": "item",
           "settings": {
             "icon": "shipping",
-            "title": "Envíos en Texas",
-            "subtitle": "Entrega aprox. 7 días hábiles"
+            "title": "Shipping in Texas",
+            "subtitle": "Est. delivery ~7 business days"
           }
         },
         "trust-2": {
           "type": "item",
           "settings": {
             "icon": "lightning",
-            "title": "Ofertas Flash Diarias",
-            "subtitle": "Hasta 50% de descuento"
+            "title": "Daily Flash Deals",
+            "subtitle": "Up to 50% off"
           }
         },
         "trust-3": {
           "type": "item",
           "settings": {
             "icon": "shield",
-            "title": "Calidad Garantizada",
-            "subtitle": "Productos 100% certificados"
+            "title": "Guaranteed Quality",
+            "subtitle": "100% certified products"
           }
         },
         "trust-4": {
           "type": "item",
           "settings": {
             "icon": "payment",
-            "title": "Pagos 100% Seguros",
-            "subtitle": "Transacciones encriptadas"
+            "title": "100% Secure Payments",
+            "subtitle": "Encrypted transactions"
           }
         }
       },
@@ -82,37 +82,37 @@
         "op-1": {
           "type": "item",
           "settings": {
-            "text": "ALMACÉN CENTRAL: HOUSTON, TX"
+            "text": "CENTRAL WAREHOUSE: HOUSTON, TX"
           }
         },
         "op-2": {
           "type": "item",
           "settings": {
-            "text": "DESPACHO EN 24 HORAS HÁBILES"
+            "text": "DISPATCHED WITHIN 24 BUSINESS HOURS"
           }
         },
         "op-3": {
           "type": "item",
           "settings": {
-            "text": "PRODUCTOS 100% NUEVOS EN CAJA SELLADA"
+            "text": "100% BRAND NEW FACTORY-SEALED PRODUCTS"
           }
         },
         "op-4": {
           "type": "item",
           "settings": {
-            "text": "GARANTÍA DIRECTA DE BODEGA"
+            "text": "DIRECT WAREHOUSE WARRANTY"
           }
         },
         "op-5": {
           "type": "item",
           "settings": {
-            "text": "INVENTARIO DIRECTO DE DISTRIBUIDOR"
+            "text": "DIRECT DISTRIBUTOR OVERSTOCK INVENTORY"
           }
         },
         "op-6": {
           "type": "item",
           "settings": {
-            "text": "ENVÍOS DIRECTOS A TODO TEXAS"
+            "text": "DIRECT SHIPPING ACROSS TEXAS"
           }
         }
       },
@@ -135,7 +135,7 @@
     "high_value_deals": {
       "type": "high-value-deals",
       "settings": {
-        "heading": "OFERTAS DE ALTO VALOR & LOTES EXCLUSIVOS",
+        "heading": "HIGH-VALUE DEALS & EXCLUSIVE LOTS",
         "subheading": "",
         "collection": "frontpage",
         "filter_min_price": true,
@@ -155,32 +155,32 @@
         "cat-1": {
           "type": "category",
           "settings": {
-            "title": "Iluminación & Lámparas",
-            "subtitle": "+45 Productos",
+            "title": "Lighting & Lamps",
+            "subtitle": "+45 Products",
             "custom_url": "/collections/all"
           }
         },
         "cat-2": {
           "type": "category",
           "settings": {
-            "title": "Electrodomésticos",
-            "subtitle": "Hogar & Cocina",
+            "title": "Home Appliances",
+            "subtitle": "Home & Kitchen",
             "custom_url": "/collections/all"
           }
         },
         "cat-3": {
           "type": "category",
           "settings": {
-            "title": "Herramientas Pro",
-            "subtitle": "Inalámbricas & Manuales",
+            "title": "Pro Tools",
+            "subtitle": "Cordless & Hand Tools",
             "custom_url": "/collections/all"
           }
         },
         "cat-4": {
           "type": "category",
           "settings": {
-            "title": "Hogar Inteligente",
-            "subtitle": "Automatización & Confort",
+            "title": "Smart Home",
+            "subtitle": "Automation & Comfort",
             "custom_url": "/collections/all"
           }
         }
@@ -192,8 +192,8 @@
         "cat-4"
       ],
       "settings": {
-        "heading": "Explora por Especialidad",
-        "subheading": "Suministros y componentes seleccionados para tu hogar, taller o proyecto",
+        "heading": "Shop by Specialty",
+        "subheading": "Curated supplies and components for your home, workshop, or project",
         "bg_color": "#f8fafc",
         "heading_color": "#0f172a",
         "subheading_color": "#475569",
@@ -204,12 +204,12 @@
     "flash_deals": {
       "type": "flash-deals",
       "settings": {
-        "heading": "OFERTAS IMPERDIBLES - POR TIEMPO LIMITADO",
+        "heading": "UNMISSABLE DEALS - LIMITED TIME ONLY",
         "subheading": "",
         "collection": "ofertas-flash",
         "filter_max_price": true,
         "products_to_show": 4,
-        "timer_label": "CIERRE DE LOTE",
+        "timer_label": "CLOSING LOT",
         "timer_duration_hours": 8,
         "show_view_all": true,
         "bg_color": "#ffffff",
@@ -225,22 +225,22 @@
         "step-1": {
           "type": "step",
           "settings": {
-            "title": "Adquisición de Lotes Directos",
-            "description": "Monitoreamos y compramos lotes cerrados de sobrestock de fábrica, cancelaciones de obra y excedentes de distribuidores autorizados en Texas."
+            "title": "Direct Lot Acquisition",
+            "description": "We monitor and acquire closed factory overstock lots, job cancellations, and distributor surplus across Texas."
           }
         },
         "step-2": {
           "type": "step",
           "settings": {
-            "title": "Inspección Técnica en Bodega",
-            "description": "Cada lote se recibe en nuestro centro de Houston, TX, donde verificamos empaques originales, sellos de fábrica y compatibilidad técnica antes de su publicación."
+            "title": "Technical Warehouse Inspection",
+            "description": "Each lot is received at our Houston, TX facility, where we verify original packaging, factory seals, and condition before listing."
           }
         },
         "step-3": {
           "type": "step",
           "settings": {
-            "title": "Despacho & Entrega",
-            "description": "Sin intermediarios ni costos de retail tradicional. Preparamos y despachamos directo desde bodega con entrega estimada de aproximadamente 7 días hábiles y garantía de 5 días hábiles luego de haber llegado el paquete a su destino."
+            "title": "Dispatch & Delivery",
+            "description": "No middlemen or traditional retail markups. We prepare and ship directly from our warehouse with estimated delivery in ~7 business days and a 5-business-day warranty upon delivery."
           }
         }
       },
@@ -250,8 +250,8 @@
         "step-3"
       ],
       "settings": {
-        "heading": "¿Por qué nuestros precios son de liquidación real?",
-        "subheading": "Adquirimos lotes de inventario y sobrestock mayorista en Texas para trasladar el descuento directo a tu proyecto.",
+        "heading": "Why are our prices true liquidation?",
+        "subheading": "We acquire inventory lots and wholesale overstock in Texas to pass direct savings onto your project.",
         "bg_color": "#ffffff",
         "heading_color": "#0f172a",
         "subheading_color": "#475569",
@@ -265,50 +265,50 @@
         "faq-1": {
           "type": "faq_item",
           "settings": {
-            "question": "¿Los artículos son 100% nuevos o reacondicionados?",
-            "answer": "Todos nuestros artículos son 100% nuevos, sellados en su empaque original de fábrica. Provienen de sobrestock mayorista y cancelaciones de proyectos en Texas, nunca de devoluciones o equipos de segunda mano."
+            "question": "Are items 100% brand new or refurbished?",
+            "answer": "All items are 100% brand new, sealed in original factory packaging. They come from wholesale overstock and Texas project cancellations, never from customer returns or second-hand goods."
           }
         },
         "faq-2": {
           "type": "faq_item",
           "settings": {
-            "question": "¿Por qué los precios son tan bajos respecto al retail tradicional?",
-            "answer": "Compramos por volumen lotes cerrados a distribuidores que necesitan rotar espacio en bodega rápidamente. Al vender online directamente desde nuestro almacén en Houston sin cadenas de intermediarios, trasladamos el ahorro neto a nuestros clientes."
+            "question": "Why are prices so low compared to traditional retail?",
+            "answer": "We buy closed wholesale lots in bulk from distributors needing to quickly clear warehouse space. By selling online directly from our Houston facility without retail middleman chains, we pass the net savings directly to our customers."
           }
         },
         "faq-3": {
           "type": "faq_item",
           "settings": {
-            "question": "¿Cuánto tiempo tarda la entrega en Texas?",
-            "answer": "Los pedidos se preparan y despachan en 24 horas hábiles desde Houston, TX. El tiempo estimado de entrega es de aproximadamente 7 días hábiles vía paquetería."
+            "question": "How long does shipping take in Texas?",
+            "answer": "Orders are processed and dispatched within 24 business hours from Houston, TX. Estimated delivery time is approximately 7 business days via courier."
           }
         },
         "faq-4": {
           "type": "faq_item",
           "settings": {
-            "question": "¿Qué garantía tienen los productos adquiridos?",
-            "answer": "Todos los productos cuentan con una garantía de 5 días hábiles a partir de haber reportado el caso y reenviado el artículo a nuestra bodega en Houston."
+            "question": "What warranty is included with purchased products?",
+            "answer": "All products include a 5-business-day warranty starting once the claim is filed and the item is returned to our Houston warehouse."
           }
         },
         "faq-5": {
           "type": "faq_item",
           "settings": {
-            "question": "¿Qué pasa si mi producto llega dañado?",
-            "answer": "Si el producto llega dañado durante el envío, contáctanos inmediatamente y envíanos fotografías del producto, el empaque y la etiqueta de envío. Evaluaremos el caso y te indicaremos los siguientes pasos."
+            "question": "What if my product arrives damaged?",
+            "answer": "If an item arrives damaged during transit, contact us immediately with photos of the product, packaging, and shipping label. We will review the case promptly and guide you through the next steps."
           }
         },
         "faq-6": {
           "type": "faq_item",
           "settings": {
-            "question": "¿Los productos pueden agotarse rápidamente?",
-            "answer": "Sí. La mercancía de liquidación suele estar disponible en cantidades limitadas. Algunos productos pueden no volver a estar disponibles una vez agotados."
+            "question": "Can products sell out quickly?",
+            "answer": "Yes. Liquidation inventory is available in strictly limited quantities. Once a lot is sold out, it may not be restocked."
           }
         },
         "faq-7": {
           "type": "faq_item",
           "settings": {
-            "question": "¿Cómo puedo contactar a Flash Deals Texas?",
-            "answer": "Puedes comunicarte con nosotros a través de nuestros canales de contacto disponibles en la página web. Estamos aquí para ayudarte con preguntas sobre productos, pedidos, envíos y compras."
+            "question": "How can I contact Flash Deals Texas?",
+            "answer": "You can reach us through any of our contact channels available on the website (phone, email, WhatsApp). We are here to help with questions regarding products, orders, and shipping."
           }
         }
       },
@@ -322,8 +322,8 @@
         "faq-7"
       ],
       "settings": {
-        "heading": "Preguntas Frecuentes sobre Liquidaciones",
-        "subheading": "Respuestas claras sobre procedencia, tiempos de despacho y garantías.",
+        "heading": "Frequently Asked Questions About Liquidations",
+        "subheading": "Clear answers on product origin, Texas dispatch times, and warranties.",
         "bg_color": "#f8fafc",
         "heading_color": "#0f172a",
         "subheading_color": "#475569",
