@@ -1,0 +1,11 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Shopify & Unused Assets
+_unused_assets/
+.shopify/
+.env*
+node_modules/

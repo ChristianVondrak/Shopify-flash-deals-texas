@@ -1,0 +1,6 @@
+# Shopify ignore rules
+.git/
+.gitignore
+.shopifyignore
+_unused_assets/
+.DS_Store
